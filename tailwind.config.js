@@ -7,8 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orange: "#fdb813",
-        red: "#ee2e24",
+        dark: "#131219",
+        purple: "#54437a",
+        light: "#a5afcd",
+      },
+      screens: {
+        xs: "500px",
       },
     },
   },
