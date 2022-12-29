@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Evlun",
+    "cover": "/projects/evlun-cover.jpg",
+    "technologies": [
+      "React",
+      "Next",
+      "Tailwind",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Docker",
+      "React-Query",
+      "TypeScript",
+      "Cloudinary"
+    ],
+    "repository": "https://github.com/TomasCuevas/Evlun",
+    "description": "Clon de Twitter 100% funcional. Realizado totalmente desde 0, para aplicar todos mis conocimientos en un reto con una dificultad avanzada. En él, puedes crear una cuenta, seguir usuarios, escribir posts, responder a posts propios como ajenos, likear posts y demás."
+  },
+  {
+    "name": "Teslo",
+    "cover": "/projects/teslo-cover.jpg",
+    "technologies": [
+      "React",
+      "Next",
+      "Tailwind",
+      "Node",
+      "MongoDB",
+      "NextAuth",
+      "Docker",
+      "SWR",
+      "TypeScript",
+      "PayPal API"
+    ],
+    "repository": "https://github.com/TomasCuevas/Teslo",
+    "description": "Un ecommerce realizado en un curso que tome de NextJs. Tras terminar el curso, decidí tomar la aplicación y pulirla, refactorizar el Código, mejorar los estilos, mejorar el performance y el responsive de la aplicación."
+  },
+  {
+    "name": "Visualizer",
+    "cover": "/projects/visualizer-cover.jpg",
+    "technologies": [
+      "React",
+      "Next",
+      "Tailwind",
+      "Unsplash API",
+      "React-Query",
+      "TypeScript"
+    ],
+    "repository": "https://github.com/TomasCuevas/Visualizer",
+    "description": "Web de imágenes obtenidas por la API que ofrece Unsplash. En ella podremos visualizar las ultimas imágenes, imágenes por categoría o utilizar el buscador integrado en la web."
+  },
+  {
+    "name": "Atomic Notes",
+    "cover": "/projects/atomic-notes-cover.jpg",
+    "technologies": [
+      "React",
+      "Next",
+      "Tailwind",
+      "Material UI",
+      "Firebase & Firestore",
+      "Cloudinary",
+      "TypeScript"
+    ],
+    "repository": "https://github.com/TomasCuevas/Atomic-Notes",
+    "description": "Aplicación que permite la creación y edición de notas, a las mimas, se les puede agregar imágenes. Se utiliza Firebase para el manejo autenticación y Firestore como base de datos, junto a Cloudinary para el almacenamiento de imágenes."
+  },
+  {
+    "name": "Pokedex",
+    "cover": "/projects/pokedex-cover.jpg",
+    "technologies": ["React", "Next", "Tailwind", "React-Query", "TypeScript"],
+    "repository": "https://github.com/TomasCuevas/Pokedex-TC",
+    "description": "Web de listado de pokemones, utilizando la API de PokeAPI. Se pueden listar todos los pokemones, listar por tipo de pokemon, guardar pokemon en favoritos y visualizar página de pokemon seleccionado."
+  }
+]
