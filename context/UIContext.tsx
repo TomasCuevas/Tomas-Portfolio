@@ -1,8 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useLayoutEffect } from "react";
 
 //* CONTEXT *//
 //* CONTEXT *//
 interface UIContextProps {
+  isMobile: boolean;
   isSidebarOpen: boolean;
   toggleSidebar(): void;
 }
@@ -15,8 +16,12 @@ interface UIProviderProps {
   children: React.ReactNode;
 }
 
+const useBrowserLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : () => {};
+
 export const UIProvider: React.FC<UIProviderProps> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => {
@@ -30,10 +35,21 @@ export const UIProvider: React.FC<UIProviderProps> = ({ children }) => {
     });
   };
 
+  useBrowserLayoutEffect(() => {
+    setIsMobile(() => window.innerWidth < 768);
+
+    const event = window.addEventListener("resize", () => {
+      setIsMobile(() => window.innerWidth < 768);
+    });
+
+    return () => removeEventListener("resize", () => event);
+  }, []);
+
   return (
     <UIContext.Provider
       value={{
         // getters
+        isMobile,
         isSidebarOpen,
 
         // methods

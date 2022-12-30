@@ -30,7 +30,9 @@ export const MainLayout: React.FC<Props> = ({
       </Head>
       {isSidebarOpen ? <Sidebar /> : null}
       <Header />
-      <main className="bg-orange min-h-[calc(100vh_-_80px)]">{children}</main>
+      <main className="flex min-h-[calc(100vh_-_80px)] flex-col items-center overflow-x-hidden bg-dark">
+        {children}
+      </main>
     </>
   );
 };
