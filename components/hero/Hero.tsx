@@ -1,4 +1,8 @@
+import NextLink from "next/link";
 import { motion, Variants } from "framer-motion";
+
+//* icons *//
+import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
 //* animation variants *//
 const sectionAnimation: Variants = {
@@ -13,7 +17,7 @@ const borderAnimation: Variants = {
 
 const resAnimation: Variants = {
   offscreen: { opacity: 0 },
-  onscreen: { opacity: 1 },
+  onscreen: { opacity: 1, transition: { delay: 0.6, duration: 1 } },
 };
 
 export const Hero: React.FC = () => {
@@ -57,7 +61,6 @@ export const Hero: React.FC = () => {
           whileInView="onscreen"
           viewport={{ once: false, amount: 1 }}
           variants={resAnimation}
-          transition={{ delay: 0.6, duration: 1 }}
           className="text-5xl tracking-[1px] text-purple sm:text-6xl"
         >
           Navegando por el mundo del desarrollo web
@@ -69,7 +72,6 @@ export const Hero: React.FC = () => {
           whileInView="onscreen"
           viewport={{ once: false, amount: 1 }}
           variants={resAnimation}
-          transition={{ delay: 0.6, duration: 1 }}
           className="max-w-[500px] text-lg font-light tracking-[1px] text-white md:text-xl"
         >
           Soy un desarrollador frontend especializado en el ecosistema de
@@ -77,6 +79,24 @@ export const Hero: React.FC = () => {
           para el usuario más demandante.
         </motion.p>
       </div>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 1 }}
+        variants={resAnimation}
+        transition={{ delay: 1 }}
+        className="my-4 flex gap-4"
+      >
+        <NextLink
+          href="https://www.linkedin.com/in/tom%C3%A1s-cuevas-dev/"
+          target="_blank"
+        >
+          <FaLinkedin className="cursor-pointer text-3xl text-white/70 transition-all duration-300 hover:text-white" />
+        </NextLink>
+        <NextLink href="https://github.com/TomasCuevas" target="_blank">
+          <FaGithubSquare className="cursor-pointer text-3xl text-white/70 transition-all duration-300 hover:text-white" />
+        </NextLink>
+      </motion.div>
     </motion.section>
   );
 };
