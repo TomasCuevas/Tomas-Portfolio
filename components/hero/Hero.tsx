@@ -4,15 +4,13 @@ import { motion, Variants } from "framer-motion";
 //* icons *//
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
+//* components *//
+import { SectionTitle } from "../ui";
+
 //* animation variants *//
 const sectionAnimation: Variants = {
   offscreen: { opacity: 0, y: -100 },
   onscreen: { opacity: 1, y: 0 },
-};
-
-const borderAnimation: Variants = {
-  offscreen: { opacity: 0, x: -200 },
-  onscreen: { opacity: 1, x: 0 },
 };
 
 const resAnimation: Variants = {
@@ -42,19 +40,7 @@ export const Hero: React.FC = () => {
           Hola, mi nombre es
         </h1>
       </div>
-      <div className="mb-4">
-        <h2 className="text-5xl tracking-[1px] text-light xs:text-6xl md:text-7xl">
-          Anselmo Tomás Cuevas.
-        </h2>
-      </div>
-      <motion.div
-        initial="offscreen"
-        whileInView="onscreen"
-        variants={borderAnimation}
-        viewport={{ once: false, amount: 0.1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="mb-4 h-[2px] w-full bg-light"
-      ></motion.div>
+      <SectionTitle title="Anselmo Tomás Cuevas." />
       <div className="mb-8">
         <motion.h3
           initial="offscreen"
@@ -82,7 +68,7 @@ export const Hero: React.FC = () => {
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: false, amount: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
         variants={resAnimation}
         transition={{ delay: 1 }}
         className="my-4 flex gap-4"

@@ -1,5 +1,8 @@
 import { motion, Variants } from "framer-motion";
 
+//* components *//
+import { SectionTitle } from "../ui";
+
 //* animation variants *//
 const sectionAnimation: Variants = {
   offscreen: { opacity: 0, x: -100 },
@@ -31,11 +34,6 @@ const textAnimation: Variants = {
   },
 };
 
-const borderAnimation: Variants = {
-  offscreen: { opacity: 0, x: -200 },
-  onscreen: { opacity: 1, x: 0 },
-};
-
 export const About: React.FC = () => {
   return (
     <motion.section
@@ -47,19 +45,7 @@ export const About: React.FC = () => {
       id="about_me"
       className="flex max-w-[1000px] flex-col px-4 py-20 xs:px-10 md:px-16 lg:px-8 xl:px-0"
     >
-      <div className="mb-4">
-        <h2 className="text-5xl tracking-[1px] text-light xs:text-6xl">
-          Acerca de mi
-        </h2>
-      </div>
-      <motion.div
-        initial="offscreen"
-        whileInView="onscreen"
-        variants={borderAnimation}
-        viewport={{ once: false, amount: 0.1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="mb-4 h-[2px] w-full bg-light"
-      ></motion.div>
+      <SectionTitle title="Acerca de mi" />
       <div className="flex flex-col gap-3 xs:gap-4 md:gap-6">
         <motion.p
           initial="offscreen"
