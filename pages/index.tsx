@@ -4,6 +4,7 @@ import { NextPage } from "next";
 import { About } from "../components/about";
 import { Hero } from "../components/hero";
 import { Projects } from "../components/projects";
+import { Contact } from "../components/Contact";
 
 //* layout *//
 import { MainLayout } from "../components/layout";
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
       <Hero />
       <About />
       <Projects />
+      <Contact />
     </MainLayout>
   );
 };
