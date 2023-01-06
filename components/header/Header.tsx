@@ -58,6 +58,11 @@ export const Header: React.FC = () => {
             Proyectos
           </a>
         </li>
+        <li className="rounded-md border border-light/60 px-2 py-1 text-light/60 transition-all duration-300 hover:border-light hover:text-light">
+          <a href="#contact" className="text-xl font-light tracking-[1px]">
+            Contacto
+          </a>
+        </li>
       </ul>
     </motion.header>
   );
