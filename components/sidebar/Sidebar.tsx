@@ -13,6 +13,11 @@ const asideAnimation: Variants = {
   onscreen: { opacity: 1, transition: { duration: 0.3 } },
 };
 
+const contactAnimation: Variants = {
+  offscreen: { opacity: 0, y: -10 },
+  onscreen: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
+};
+
 const textAnimation: Variants = {
   offscreen: { opacity: 0, y: 20 },
   onscreen: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } },
@@ -43,7 +48,16 @@ export const Sidebar = () => {
           </button>
         </div>
         <section className="w-full">
-          <ul className="flex flex-col items-center gap-6 px-4 xs:px-10">
+          <ul className="flwex-col flex items-center gap-6 px-4 xs:px-10">
+            <motion.li
+              initial="offscreen"
+              animate="onscreen"
+              variants={contactAnimation}
+              onClick={toggleSidebar}
+              className="w-full rounded-md border border-light py-2 text-center text-2xl text-light"
+            >
+              <a href="#contact">Contacto</a>
+            </motion.li>
             <li onClick={toggleSidebar} className="w-full text-2xl text-white">
               <motion.a
                 initial="offscreen"
