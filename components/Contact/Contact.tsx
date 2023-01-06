@@ -16,7 +16,7 @@ import {
 //* animation variants *//
 const sectionAnimation: Variants = {
   offscreen: { opacity: 0 },
-  onscreen: { opacity: 1 },
+  onscreen: { opacity: 1, transition: { duration: 2 } },
 };
 
 export const Contact: React.FC = () => {
@@ -35,10 +35,10 @@ export const Contact: React.FC = () => {
 
   return (
     <motion.section
+      id="contact"
       initial="offscreen"
       whileInView="onscreen"
-      transition={{ duration: 1 }}
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.4 }}
       variants={sectionAnimation}
       className="flex min-h-screen w-screen items-center justify-center bg-[url('/background/contact-background-mobile.svg')] bg-cover bg-no-repeat lg:mt-20 lg:bg-[url('/background/contact-background.svg')]"
     >
@@ -67,7 +67,11 @@ export const Contact: React.FC = () => {
           <FormButtonPrimary
             label="Enviar"
             type="submit"
-            isDisabled={!emailValidation(email) || !nameValidation(name)}
+            isDisabled={
+              !emailValidation(email) ||
+              !nameValidation(name) ||
+              !messageValidation(message)
+            }
           />
         </form>
       </div>

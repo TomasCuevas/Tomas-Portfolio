@@ -4,7 +4,7 @@ import { NextPage } from "next";
 import { About } from "../components/about";
 import { Hero } from "../components/hero";
 import { Projects } from "../components/projects";
-import { Contact } from "../components/Contact";
+import { Contact } from "../components/contact";
 
 //* layout *//
 import { MainLayout } from "../components/layout";
