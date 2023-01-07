@@ -25,12 +25,16 @@ export const Header: React.FC = () => {
       className="fixed top-0 left-0 z-20 flex h-20 w-full justify-between bg-dark/20 px-4 shadow-2xl shadow-purple/20 backdrop-blur-lg xs:px-10 lg:px-14 xl:px-24"
     >
       <a href="#top">
-        <img src="/t-logo.png" alt="logo" className="h-full" />
+        <img
+          src="/t-logo.png"
+          alt="logo"
+          className="h-full opacity-80 transition-all duration-300 hover:opacity-100"
+        />
       </a>
       <button type="button" className="md:hidden">
         <MdMenu
           onClick={toggleSidebar}
-          className="relative z-50 h-10 w-10 text-purple"
+          className="relative z-50 h-10 w-10 text-purple/80 transition-all duration-300 hover:text-purple"
         />
       </button>
       <ul className="hidden items-center gap-8 md:flex">
@@ -58,7 +62,7 @@ export const Header: React.FC = () => {
             Proyectos
           </a>
         </li>
-        <li className="rounded-md border border-light/60 px-2 py-1 text-light/60 transition-all duration-300 hover:border-light hover:text-light">
+        <li className="rounded-md border border-light/60 px-3 py-1 text-light/60 transition-all duration-300 hover:border-light hover:text-light">
           <a href="#contact" className="text-xl font-light tracking-[1px]">
             Contacto
           </a>
