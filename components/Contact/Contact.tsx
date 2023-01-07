@@ -1,5 +1,6 @@
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { motion, Variants } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 //* components *//
 import { SectionTitle } from "../ui";
@@ -7,6 +8,8 @@ import { FormButtonPrimary, FormInputPrimary, FormTextarea } from "../form";
 
 //* hooks *//
 import { useForm } from "../../hooks";
+
+//* helpers *//
 import {
   emailValidation,
   messageValidation,
@@ -20,17 +23,36 @@ const sectionAnimation: Variants = {
 };
 
 export const Contact: React.FC = () => {
-  const { email, message, name, isSending, onInputChange, setIsSending } =
-    useForm({
-      name: "",
-      email: "",
-      message: "",
-    });
+  const {
+    user_name,
+    user_email,
+    user_message,
+    isSending,
+    onInputChange,
+    setIsSending,
+    reset,
+  } = useForm({
+    user_name: "",
+    user_email: "",
+    user_message: "",
+  });
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsSending(true);
 
-    console.log(email, message, name);
+    const status = await emailjs.sendForm(
+      process.env.NEXT_PUBLIC_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+      event.currentTarget,
+      process.env.NEXT_PUBLIC_PUBLIC_ID!
+    );
+
+    if (status.status === 200) {
+      reset();
+    }
+
+    setIsSending(false);
   };
 
   return (
@@ -46,21 +68,21 @@ export const Contact: React.FC = () => {
         <SectionTitle title="Contacto" />
         <form className="flex flex-col gap-4" onSubmit={onSubmit}>
           <FormInputPrimary
-            inputName="name"
+            inputName="user_name"
             label="Nombre"
-            inputValue={name}
+            inputValue={user_name}
             inputChange={onInputChange}
           />
           <FormInputPrimary
-            inputName="email"
+            inputName="user_email"
             label="Email"
-            inputValue={email}
+            inputValue={user_email}
             inputChange={onInputChange}
           />
           <FormTextarea
             inputChange={onInputChange}
-            inputName="message"
-            inputValue={message}
+            inputName="user_message"
+            inputValue={user_message}
             label="Mensaje"
             max={1000}
           />
@@ -68,9 +90,10 @@ export const Contact: React.FC = () => {
             label="Enviar"
             type="submit"
             isDisabled={
-              !emailValidation(email) ||
-              !nameValidation(name) ||
-              !messageValidation(message)
+              isSending ||
+              !emailValidation(user_email) ||
+              !nameValidation(user_name) ||
+              !messageValidation(user_message)
             }
           />
         </form>
