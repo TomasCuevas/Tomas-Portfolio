@@ -18,7 +18,7 @@ interface Props {
 //* animation variants *//
 const articleAnimation: Variants = {
   offscreen: { opacity: 0, x: -150 },
-  onscreen: { opacity: 1, x: 0 },
+  onscreen: { opacity: 1, x: 0, transition: { duration: 1.5 } },
 };
 
 const imageAnimation: Variants = {
@@ -28,7 +28,7 @@ const imageAnimation: Variants = {
 
 const imageAnimationMobile: Variants = {
   offscreen: { opacity: 0.02 },
-  onscreen: { opacity: 0.25 },
+  onscreen: { opacity: 0.15 },
 };
 
 const titleAnimation: Variants = {
@@ -40,19 +40,12 @@ const descriptionAnimation: Variants = {
   offscreen: {
     opacity: 0,
     y: -20,
-    transition: {
-      type: "spring",
-      damping: 15,
-      duration: 1,
-    },
   },
   onscreen: {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      damping: 15,
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
@@ -64,7 +57,6 @@ export const Project: React.FC<Props> = ({ project }) => {
     <motion.article
       initial="offscreen"
       whileInView="onscreen"
-      transition={{ duration: 1 }}
       viewport={{ once: false, amount: 0.2 }}
       variants={articleAnimation}
       className="group relative flex w-full overflow-hidden rounded-md px-6 py-8 shadow-md shadow-light/20 sm:px-10 sm:py-12 md:min-h-[370px] md:rounded-none md:py-0 md:px-0 md:shadow-none"
@@ -77,7 +69,7 @@ export const Project: React.FC<Props> = ({ project }) => {
           whileInView="onscreen"
           src={project.cover}
           alt="Project cover"
-          className="h-full w-full rounded-md object-cover opacity-20 transition-all duration-300 md:h-auto md:opacity-20 md:shadow-lg md:group-hover:opacity-60"
+          className="h-full w-full rounded-md object-cover opacity-10 transition-all duration-300 md:h-auto md:opacity-20 md:shadow-lg md:group-hover:opacity-60"
         />
       </div>
       <div className="z-10 ml-auto flex flex-col justify-center gap-4 md:w-[50%] md:items-end">
@@ -92,31 +84,32 @@ export const Project: React.FC<Props> = ({ project }) => {
           {project.name}
         </motion.h3>
         <div className="md:rounded-md md:bg-white md:shadow-xl md:shadow-purple/20 md:group-hover:shadow-purple/30">
-          <p className="flex flex-wrap gap-[3px] font-light leading-7 text-white xs:text-lg md:px-8 md:py-4 md:leading-8 md:text-purple ">
-            {project.description.split(" ").map((word, i) => (
-              <motion.span
-                initial="offscreen"
-                whileInView="onscreen"
-                variants={descriptionAnimation}
-                viewport={{ once: false, amount: 0.9 }}
-                key={word + i}
-              >
-                {word}
-              </motion.span>
-            ))}
-          </p>
+          <motion.p
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={descriptionAnimation}
+            viewport={{ once: false, amount: 0.2 }}
+            className="flex flex-wrap gap-[3px] font-light leading-7 text-white xs:text-lg md:px-8 md:py-4 md:leading-8 md:text-purple "
+          >
+            {project.description}
+          </motion.p>
         </div>
         <div className="flex flex-wrap gap-3 md:justify-end md:gap-4">
           {project.technologies.map((technologie) => (
             <span
               key={technologie}
-              className="text-base font-light tracking-[1px] text-light"
+              className="text-base font-thin tracking-[1px] text-light"
             >
               {technologie}
             </span>
           ))}
         </div>
-        <div className="flex items-center justify-end gap-2">
+        <div className="flex items-center justify-end gap-5">
+          {project.link ? (
+            <NextLink href={project.link} target="_blank">
+              <TbLocation className="text-2xl text-white" />
+            </NextLink>
+          ) : null}
           <NextLink href={project.repository} target="_blank">
             <TbBrandGithub className="text-2xl text-white" />
           </NextLink>

@@ -4,4 +4,5 @@ export interface IProject {
   name: string;
   repository: string;
   technologies: string[];
+  link?: string;
 }
