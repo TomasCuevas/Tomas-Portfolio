@@ -1,5 +1,4 @@
 import { FormEvent } from "react";
-import { motion, Variants } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 //* components *//
@@ -15,12 +14,6 @@ import {
   messageValidation,
   nameValidation,
 } from "../../helpers";
-
-//* animation variants *//
-const sectionAnimation: Variants = {
-  offscreen: { opacity: 0 },
-  onscreen: { opacity: 1, transition: { duration: 2 } },
-};
 
 export const Contact: React.FC = () => {
   const {
@@ -56,12 +49,8 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <motion.section
+    <section
       id="contact"
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: false, amount: 0.4 }}
-      variants={sectionAnimation}
       className="flex min-h-screen w-screen items-center justify-center bg-[url('/background/contact-background-mobile.svg')] bg-cover bg-no-repeat lg:mt-20 lg:bg-[url('/background/contact-background.svg')]"
     >
       <div className="flex w-full max-w-[1000px] flex-col p-4 xs:px-10 md:px-16 lg:px-8 xl:px-0">
@@ -98,6 +87,6 @@ export const Contact: React.FC = () => {
           />
         </form>
       </div>
-    </motion.section>
+    </section>
   );
 };
