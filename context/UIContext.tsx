@@ -1,10 +1,15 @@
-import { createContext, useState, useLayoutEffect } from "react";
+import { createContext, useState, useLayoutEffect, Dispatch } from "react";
 
 //* CONTEXT *//
 //* CONTEXT *//
 interface UIContextProps {
-  isMobile: boolean;
   isSidebarOpen: boolean;
+  projectsViewStyle: "list" | "card";
+  skillSectionChoosed: "frontend" | "backend" | "tools" | "testing";
+  setProjectsViewStyle: Dispatch<"list" | "card">;
+  setSkillSectionChoosed: Dispatch<
+    "frontend" | "backend" | "tools" | "testing"
+  >;
   toggleSidebar(): void;
 }
 
@@ -16,12 +21,14 @@ interface UIProviderProps {
   children: React.ReactNode;
 }
 
-const useBrowserLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : () => {};
-
 export const UIProvider: React.FC<UIProviderProps> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [projectsViewStyle, setProjectsViewStyle] = useState<"list" | "card">(
+    "list"
+  );
+  const [skillSectionChoosed, setSkillSectionChoosed] = useState<
+    "frontend" | "backend" | "tools" | "testing"
+  >("frontend");
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => {
@@ -35,25 +42,18 @@ export const UIProvider: React.FC<UIProviderProps> = ({ children }) => {
     });
   };
 
-  useBrowserLayoutEffect(() => {
-    setIsMobile(() => window.innerWidth < 768);
-
-    const event = window.addEventListener("resize", () => {
-      setIsMobile(() => window.innerWidth < 768);
-    });
-
-    return () => removeEventListener("resize", () => event);
-  }, []);
-
   return (
     <UIContext.Provider
       value={{
         // getters
-        isMobile,
         isSidebarOpen,
+        projectsViewStyle,
+        skillSectionChoosed,
 
         // methods
         toggleSidebar,
+        setProjectsViewStyle,
+        setSkillSectionChoosed,
       }}
     >
       {children}
