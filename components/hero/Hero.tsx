@@ -5,29 +5,17 @@ import { motion, Variants } from "framer-motion";
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
 //* components *//
-import { SectionTitle } from "../ui";
+import { SectionTitle, SectionYHoc } from "../ui";
 
 //* animation variants *//
-const sectionAnimation: Variants = {
-  offscreen: { opacity: 0, y: -100 },
-  onscreen: { opacity: 1, y: 0 },
-};
-
-const resAnimation: Variants = {
+const textAnimation: Variants = {
   offscreen: { opacity: 0 },
   onscreen: { opacity: 1, transition: { delay: 0.6, duration: 1 } },
 };
 
 export const Hero: React.FC = () => {
   return (
-    <motion.section
-      initial="offscreen"
-      whileInView="onscreen"
-      variants={sectionAnimation}
-      transition={{ duration: 1.5 }}
-      viewport={{ once: false, amount: 0.3 }}
-      className="flex min-h-[calc(100vh_-_80px)] max-w-[1000px] flex-col px-4 py-20 pt-40 xs:px-10 md:px-16 lg:px-8 xl:px-0"
-    >
+    <SectionYHoc>
       <div className="mb-5 flex justify-center">
         <img
           src="/4x4.jpg"
@@ -46,7 +34,7 @@ export const Hero: React.FC = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: false, amount: 1 }}
-          variants={resAnimation}
+          variants={textAnimation}
           className="text-5xl tracking-[1px] text-purple sm:text-6xl"
         >
           Navegando por el mundo del desarrollo web
@@ -57,19 +45,19 @@ export const Hero: React.FC = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: false, amount: 1 }}
-          variants={resAnimation}
+          variants={textAnimation}
           className="max-w-[500px] text-lg font-light tracking-[1px] text-white md:text-xl"
         >
-          Soy un desarrollador frontend especializado en el ecosistema de
-          ReactJs. Evolucionando día con día para crear las mejores experiencias
-          para el usuario más demandante.
+          Soy un desarrollador fullstack especializado en el ecosistema de
+          JavaScript. Evolucionando día tras día para crear las mejores
+          experiencias para el usuario más demandante.
         </motion.p>
       </div>
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: false, amount: 0.2 }}
-        variants={resAnimation}
+        variants={textAnimation}
         transition={{ delay: 1 }}
         className="my-4 flex gap-4"
       >
@@ -83,6 +71,6 @@ export const Hero: React.FC = () => {
           <FaGithubSquare className="cursor-pointer text-3xl text-white/70 transition-all duration-300 hover:text-white" />
         </NextLink>
       </motion.div>
-    </motion.section>
+    </SectionYHoc>
   );
 };
