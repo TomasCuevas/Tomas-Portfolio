@@ -9,7 +9,7 @@ export const FrontendSkillsFeed: React.FC = () => {
       <SkillCard img="/skills/css.svg" name="CSS" />
       <SkillCard img="/skills/html5.svg" name="HTML" />
       <SkillCard img="/skills/javascript.svg" name="JavaScript" />
-      <SkillCard img="/skills/NEXTJS.svg" name="NextJs" />
+      <SkillCard img="/skills/nextjs.svg" name="NextJs" />
       <SkillCard img="/skills/tailwindcss.svg" name="Tailwind" />
       <SkillCard img="/skills/typescript.svg" name="TypeScript" />
       <SkillCard img="/skills/redux.svg" name="Redux" />
