@@ -1,9 +1,13 @@
 import { FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 
+//* icons *//
+import { FaLinkedin, FaGithubSquare, FaAt } from "react-icons/fa";
+
 //* components *//
-import { SectionTitle } from "../ui";
+import { ContactItem } from "./";
 import { FormButtonPrimary, FormInputPrimary, FormTextarea } from "../form";
+import { SectionTitle } from "../ui";
 
 //* hooks *//
 import { useForm } from "../../hooks";
@@ -55,37 +59,58 @@ export const Contact: React.FC = () => {
     >
       <div className="flex w-full max-w-[1000px] flex-col p-4 xs:px-10 md:px-16 lg:px-8 xl:px-0">
         <SectionTitle title="Contacto" />
-        <form className="flex flex-col gap-4" onSubmit={onSubmit}>
-          <FormInputPrimary
-            inputName="user_name"
-            label="Nombre"
-            inputValue={user_name}
-            inputChange={onInputChange}
-          />
-          <FormInputPrimary
-            inputName="user_email"
-            label="Email"
-            inputValue={user_email}
-            inputChange={onInputChange}
-          />
-          <FormTextarea
-            inputChange={onInputChange}
-            inputName="user_message"
-            inputValue={user_message}
-            label="Mensaje"
-            max={1000}
-          />
-          <FormButtonPrimary
-            label="Enviar"
-            type="submit"
-            isDisabled={
-              isSending ||
-              !emailValidation(user_email) ||
-              !nameValidation(user_name) ||
-              !messageValidation(user_message)
-            }
-          />
-        </form>
+        <div className="mt-5 flex flex-col gap-10 lg:flex-row">
+          <div className="flex h-full w-full flex-col gap-3 rounded-md bg-darkLight p-4 py-6 sm:gap-5 lg:gap-10">
+            <ContactItem
+              icon={FaLinkedin}
+              link="https://www.linkedin.com/in/tom%C3%A1s-cuevas-dev/"
+              media="LinkedIn"
+              text="linkedin.com/in/tomás-cuevas-dev/"
+            />
+            <ContactItem
+              icon={FaGithubSquare}
+              link="https://github.com/TomasCuevas"
+              media="GitHub"
+              text="github.com/TomasCuevas"
+            />
+            <ContactItem
+              icon={FaAt}
+              media="Email"
+              text="tomas.contact.dev@gmail.com"
+            />
+          </div>
+          <form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
+            <FormInputPrimary
+              inputName="user_name"
+              label="Nombre"
+              inputValue={user_name}
+              inputChange={onInputChange}
+            />
+            <FormInputPrimary
+              inputName="user_email"
+              label="Email"
+              inputValue={user_email}
+              inputChange={onInputChange}
+            />
+            <FormTextarea
+              inputChange={onInputChange}
+              inputName="user_message"
+              inputValue={user_message}
+              label="Mensaje"
+              max={1000}
+            />
+            <FormButtonPrimary
+              label="Enviar"
+              type="submit"
+              isDisabled={
+                isSending ||
+                !emailValidation(user_email) ||
+                !nameValidation(user_name) ||
+                !messageValidation(user_message)
+              }
+            />
+          </form>
+        </div>
       </div>
     </section>
   );
