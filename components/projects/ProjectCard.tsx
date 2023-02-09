@@ -18,8 +18,8 @@ const articleAnimation: Variants = {
 };
 
 const imageAnimationMobile: Variants = {
-  offscreen: { opacity: 0.02 },
-  onscreen: { opacity: 0.25 },
+  offscreen: { opacity: 0.1 },
+  onscreen: { opacity: 0.22 },
 };
 
 const titleAnimation: Variants = {
@@ -30,14 +30,10 @@ const titleAnimation: Variants = {
 const descriptionAnimation: Variants = {
   offscreen: {
     opacity: 0,
-    y: -20,
   },
   onscreen: {
+    transition: { duration: 0.5 },
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
   },
 };
 
@@ -50,7 +46,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
       variants={articleAnimation}
       className="group relative flex w-full overflow-hidden rounded-md px-6 py-8 shadow-md shadow-purple/20 sm:p-16 md:px-6 md:py-8"
     >
-      <div className="absolute top-0 left-0 flex h-full w-full overflow-hidden rounded-md bg-purple/30 ">
+      <div className="absolute top-0 left-0 flex h-full w-full overflow-hidden rounded-md bg-purple/10 ">
         <motion.img
           initial="offscreen"
           variants={imageAnimationMobile}
@@ -77,17 +73,17 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
             initial="offscreen"
             whileInView="onscreen"
             variants={descriptionAnimation}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: false, amount: 0.5 }}
             className="flex flex-wrap gap-[3px] font-light leading-7 text-white xs:text-lg"
           >
             {project.description}
           </motion.p>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {project.technologies.map((technologie) => (
             <span
               key={technologie}
-              className="text-base font-thin tracking-[1px] text-light"
+              className="rounded-md bg-purple/20 px-2 py-1 text-base font-thin tracking-[1px] text-light "
             >
               {technologie}
             </span>

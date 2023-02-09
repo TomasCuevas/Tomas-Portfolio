@@ -83,11 +83,11 @@ export const ProjectCardExpanded: React.FC<Props> = ({ project }) => {
             {project.description}
           </motion.p>
         </div>
-        <div className="flex flex-wrap justify-end gap-4">
+        <div className="flex flex-wrap justify-end gap-3 gap-y-2 xl:max-w-[90%]">
           {project.technologies.map((technologie) => (
             <span
               key={technologie}
-              className="text-base font-thin tracking-[1px] text-light"
+              className="rounded-md bg-purple/10 px-2 py-1 text-base font-thin tracking-[1px] text-light"
             >
               {technologie}
             </span>
