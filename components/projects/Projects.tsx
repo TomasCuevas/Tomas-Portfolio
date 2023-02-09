@@ -5,7 +5,7 @@ import { DesktopProjectsFeed, MobileProjectsFeed } from "./";
 export const Projects: React.FC = () => {
   return (
     <SectionXHoc id="projects">
-      <SectionTitle title="Projectos" />
+      <SectionTitle title="Proyectos" />
       <MobileProjectsFeed />
       <DesktopProjectsFeed />
     </SectionXHoc>
