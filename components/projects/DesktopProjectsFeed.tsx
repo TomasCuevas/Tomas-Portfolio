@@ -18,19 +18,19 @@ export const DesktopProjectsFeed: React.FC = () => {
   return (
     <div>
       <div className="mb-5 mt-2 hidden items-center justify-end gap-5 px-8 lg:flex">
-        <button onClick={() => setProjectsViewStyle("card")}>
-          {projectsViewStyle === "card" ? (
-            <BsGridFill className="h-7 w-7 text-purple" />
-          ) : (
-            <BsGrid className="h-7 w-7 text-white" />
-          )}
-        </button>
         <button onClick={() => setProjectsViewStyle("list")}>
           <BsListUl
             className={`h-9 w-9 ${
               projectsViewStyle === "list" ? "text-purple" : "text-white"
             }`}
           />
+        </button>
+        <button onClick={() => setProjectsViewStyle("card")}>
+          {projectsViewStyle === "card" ? (
+            <BsGridFill className="h-7 w-7 text-purple" />
+          ) : (
+            <BsGrid className="h-7 w-7 text-white" />
+          )}
         </button>
       </div>
       {projectsViewStyle === "list" ? (
