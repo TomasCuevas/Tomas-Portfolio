@@ -39,7 +39,7 @@ export const Sidebar = () => {
         variants={asideAnimation}
         className="fixed top-0 left-0 z-50 h-screen w-screen bg-dark/80 backdrop-blur-xl md:hidden"
       >
-        <div className="mb-2 flex h-20 items-center justify-end p-4">
+        <div className="mb-2 flex h-20 items-center justify-end p-4 xs:px-10">
           <button type="button">
             <MdClose
               onClick={toggleSidebar}
@@ -48,7 +48,7 @@ export const Sidebar = () => {
           </button>
         </div>
         <section className="w-full">
-          <ul className="flex flex-col items-center gap-6 px-4 xs:px-10">
+          <ul className="flex flex-col items-center gap-8 px-4 xs:px-10">
             <motion.li
               initial="offscreen"
               animate="onscreen"
