@@ -12,7 +12,8 @@
       "Docker",
       "React-Query",
       "TypeScript",
-      "Cloudinary"
+      "Cloudinary",
+      "Mongoose"
     ],
     "repository": "https://github.com/TomasCuevas/Evlun",
     "description": "Clon de Twitter 100% funcional. Realizado totalmente desde 0, para aplicar todos mis conocimientos en un reto con una dificultad avanzada. En él, puedes crear una cuenta, seguir usuarios, escribir posts, responder a posts propios como ajenos, likear posts y demás."
@@ -30,7 +31,8 @@
       "Docker",
       "SWR",
       "TypeScript",
-      "PayPal API"
+      "PayPal API",
+      "Mongoose"
     ],
     "repository": "https://github.com/TomasCuevas/Teslo",
     "description": "Un ecommerce realizado en un curso que tome de NextJs. Tras terminar el curso, decidí tomar la aplicación y pulirla, refactorizar el Código, mejorar los estilos, mejorar el performance y el responsive de la aplicación.",
@@ -64,14 +66,22 @@
       "TypeScript"
     ],
     "repository": "https://github.com/TomasCuevas/Atomic-Notes",
-    "description": "Aplicación que permite la creación y edición de notas, a las mimas, se les puede agregar imágenes. Se utiliza Firebase para el manejo autenticación y Firestore como base de datos, junto a Cloudinary para el almacenamiento de imágenes."
+    "description": "Aplicación que permite la creación y edición de notas, a las mimas, se les puede agregar imágenes. Se utiliza Firebase para el manejo autenticación y Firestore como base de datos, junto a Cloudinary para el almacenamiento de imágenes.",
+    "link": "https://atomic-notes.vercel.app"
   },
   {
     "name": "Pokedex",
     "cover": "/projects/pokedex-cover.jpg",
-    "technologies": ["React", "Next", "Tailwind", "React-Query", "TypeScript"],
+    "technologies": [
+      "React",
+      "Next",
+      "Tailwind",
+      "React-Query",
+      "TypeScript",
+      "Framer-Motion"
+    ],
     "repository": "https://github.com/TomasCuevas/Pokedex-TC",
-    "description": "Web de listado de pokemones, utilizando la API de PokeAPI. Se pueden listar todos los pokemones, listar por tipo de pokemon, guardar pokemon en favoritos y visualizar página de pokemon seleccionado.",
+    "description": "Web de listado de pokemones, utilizando la API de PokeAPI. Se pueden listar todos los pokemones, listar por tipo de pokemon, guardar pokemon en favoritos, quitarlos de favoritos, visualizar página de pokemon seleccionado y buscar pokemon en el buscador integrado.",
     "link": "https://pokedex-tc.vercel.app/"
   }
 ]
