@@ -16,6 +16,7 @@ export const BackendSkillsFeed: React.FC = () => {
       <SkillCard img="/skills/typeorm.svg" name="TypeORM" />
       <SkillCard img="/skills/firebase.svg" name="Firabase" />
       <SkillCard img="/skills/supabase.svg" name="Supabase" />
+      <SkillCard img="/skills/swagger.svg" name="Swagger" />
     </SkillsFeedHoc>
   );
 };
