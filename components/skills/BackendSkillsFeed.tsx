@@ -13,6 +13,7 @@ export const BackendSkillsFeed: React.FC = () => {
       <SkillCard img="/skills/mysql.svg" name="MySQL" />
       <SkillCard img="/skills/mongodb.svg" name="MongoDB" />
       <SkillCard img="/skills/sequelize.svg" name="Sequelize" />
+      <SkillCard img="/skills/mongoose.svg" name="Mongoose" />
       <SkillCard img="/skills/typeorm.svg" name="TypeORM" />
       <SkillCard img="/skills/firebase.svg" name="Firabase" />
       <SkillCard img="/skills/supabase.svg" name="Supabase" />
