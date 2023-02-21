@@ -29,6 +29,10 @@ const textAnimation: Variants = {
   },
 };
 
+//* tailwind-classes *//
+const pClass =
+  "text-lg font-extralight tracking-[1px] text-white sm:text-xl lg:text-2xl";
+
 export const About: React.FC = () => {
   return (
     <SectionXHoc id="about_me">
@@ -39,47 +43,50 @@ export const About: React.FC = () => {
           whileInView="onscreen"
           variants={textAnimation}
           viewport={{ once: false, amount: 0.5 }}
-          className="text-lg font-light tracking-[1px] text-white sm:text-xl lg:text-2xl"
+          className={pClass}
         >
-          Desde pequeño, apasionado por el mundo de la tecnología, el hardware y
-          más adelante, del software.
+          22 años de edad, apasionado por el mundo del software desde muy
+          pequeño. Comencé en esta área desarrollando pequeños scripts para que
+          mis modelos 3D tuvieran funcionalidad en un motor gráfico de
+          videojuegos. Desde esos momentos, hasta el día de hoy, no he parado de
+          aprender y seguir evolucionando como desarrollador.
         </motion.p>
         <motion.p
           initial="offscreen"
           whileInView="onscreen"
           variants={textAnimation}
           viewport={{ once: false, amount: 0.5 }}
-          className="text-lg font-light tracking-[1px] text-white sm:text-xl lg:text-2xl"
+          className={pClass}
         >
-          Cuando niño, quise desarrollar mi propio videojuego, por lo que desde
-          muy temprano en mi vida, me cruce con el mundo de la programación.
-          Haciendo cosas básicas en C# junto al motor grafico (Unity). Desde
-          esos momentos, fue que me atrajo el software y la programación, sin
-          siquiera, conocer conceptos básicos como variables, funciones,
-          objetos, etc.
+          Me apasiona desarrollar proyectos ambiciosos, en los que pueda aplicar
+          todos mis conocimientos y adquirir nuevos, porque, si hay algo que me
+          caracteriza, es jamás dejar de aprender y muy pocas veces estar
+          conforme con lo desarrollado.
         </motion.p>
         <motion.p
           initial="offscreen"
           whileInView="onscreen"
           variants={textAnimation}
           viewport={{ once: false, amount: 0.5 }}
-          className="text-lg font-light tracking-[1px] text-white sm:text-xl lg:text-2xl"
+          className={pClass}
         >
-          Al pasar los años, pase por C# que lo utilizaba en Unity, programando
-          cositas básicas. Más adelante, pase por C++, haciendo ejercicios de
-          lógica en aplicaciones de consola, hasta que conocí el mundo del
-          desarrollo web, donde comencé a aprender JavaScript, y todo lo demás.
+          He desarrollado varios proyectos que he hecho público y otros que
+          jamás vieron la luz, de todos ellos, he aprendido, he mejorado y he
+          sacado conclusiones que me permitieron desarrollarme como profesional
+          y como persona.
         </motion.p>
         <motion.p
           initial="offscreen"
           whileInView="onscreen"
           variants={textAnimation}
           viewport={{ once: false, amount: 0.5 }}
-          className="text-lg font-light tracking-[1px] text-white sm:text-xl lg:text-2xl"
+          className={pClass}
         >
-          Saludos, mi nombre es Tomás Cuevas, y lo anterior, fue una acotada
-          ruta de mi vida, en la introducción al mundo del desarrollo de
-          software.
+          En varios de mis proyectos personales, he sentido que no era capaz de
+          sacarlos adelante, pero eso mismo, me enseñó a no rendirme, a entender
+          que si hay algo que no soy capaz de hacer, es una oportunidad para
+          aprender algo nuevo, algo a lo que no debo temerle, simplemente, es
+          otro obstáculo más en el camino.
         </motion.p>
       </div>
     </SectionXHoc>
