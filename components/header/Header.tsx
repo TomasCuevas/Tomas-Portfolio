@@ -72,14 +72,14 @@ export const Header: React.FC = () => {
             </a>
           </li>
         </ul>
-        <div className="hidden items-center rounded-md border border-light/60 text-light/60 transition-all duration-300 hover:border-light hover:text-light md:flex">
+        <button className="hidden items-center rounded-md border border-light/60 text-light/60 transition-all duration-300 hover:border-light hover:text-light md:flex">
           <a
             href="#contact"
             className="py-1 px-3 text-xl font-light tracking-[1px]"
           >
             Contacto
           </a>
-        </div>
+        </button>
       </div>
     </motion.header>
   );
