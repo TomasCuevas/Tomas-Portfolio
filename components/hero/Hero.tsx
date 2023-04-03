@@ -3,7 +3,7 @@ import { motion, Variants } from "framer-motion";
 
 //* icons *//
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
-import { RiDownloadCloudLine } from "react-icons/ri";
+import { RiEyeFill } from "react-icons/ri";
 
 //* components *//
 import { SectionTitle, SectionYHoc } from "../ui";
@@ -73,12 +73,12 @@ export const Hero: React.FC = () => {
         </NextLink>
         <button className="items-center rounded-md border border-light/60 text-light/60 transition-all duration-300 hover:border-light hover:text-light">
           <a
-            href="Tomás_Cuevas_Curriculum_FullStack.pdf"
-            download
+            target="_blank"
+            href="/assets/Tomás_Cuevas_Curriculum_FullStack.pdf"
             className="flex items-center gap-2 py-1 px-3 text-lg font-light tracking-[1px]"
           >
-            <span>Descargar CV</span>
-            <RiDownloadCloudLine />
+            <span>Ver CV</span>
+            <RiEyeFill />
           </a>
         </button>
       </motion.div>
