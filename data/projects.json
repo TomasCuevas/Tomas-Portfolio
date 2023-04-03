@@ -17,7 +17,7 @@
     ],
     "repository": "https://github.com/TomasCuevas/Evlun",
     "description": "Clon de Twitter 100% funcional. Realizado totalmente desde 0, para aplicar todos mis conocimientos en un reto con una dificultad avanzada. En él, puedes crear una cuenta, seguir usuarios, escribir posts, responder a posts propios como ajenos, likear posts y demás.",
-    "link": "evlun-client.vercel.app"
+    "link": "https://evlun-client.vercel.app"
   },
   {
     "name": "Teslo",
