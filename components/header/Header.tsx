@@ -5,8 +5,9 @@ import { motion, Variants } from "framer-motion";
 import { MdMenu } from "react-icons/md";
 
 //* context *//
-import { UIContext } from "../../context";
+import { UIContext } from "@/context";
 
+//* animation variants *//
 const headerAnimation: Variants = {
   offscreen: { opacity: 0 },
   onscreen: { opacity: 1 },

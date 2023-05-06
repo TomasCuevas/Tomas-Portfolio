@@ -5,19 +5,19 @@ import emailjs from "@emailjs/browser";
 import { FaLinkedin, FaGithubSquare, FaAt } from "react-icons/fa";
 
 //* components *//
-import { ContactItem } from "./";
-import { FormButtonPrimary, FormInputPrimary, FormTextarea } from "../form";
-import { SectionTitle } from "../ui";
+import { ContactItem } from "@/components/contact";
+import {
+  FormButtonPrimary,
+  FormInputPrimary,
+  FormTextarea,
+} from "@/components/form";
+import { SectionTitle } from "@/components/ui";
 
 //* hooks *//
-import { useForm } from "../../hooks";
+import { useForm } from "@/hooks";
 
 //* helpers *//
-import {
-  emailValidation,
-  messageValidation,
-  nameValidation,
-} from "../../helpers";
+import { emailValidation, messageValidation, nameValidation } from "@/helpers";
 
 export const Contact: React.FC = () => {
   const {

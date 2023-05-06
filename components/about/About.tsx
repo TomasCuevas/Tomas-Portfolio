@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 
 //* components *//
-import { SectionTitle, SectionXHoc } from "../ui";
+import { SectionTitle, SectionXHoc } from "@/components/ui";
 
 //* animation variants *//
 const textAnimation: Variants = {

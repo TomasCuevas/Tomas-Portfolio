@@ -6,7 +6,7 @@ import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { RiEyeFill } from "react-icons/ri";
 
 //* components *//
-import { SectionTitle, SectionYHoc } from "../ui";
+import { SectionTitle, SectionYHoc } from "@/components/ui";
 
 //* animation variants *//
 const textAnimation: Variants = {

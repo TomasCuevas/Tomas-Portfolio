@@ -1,14 +1,14 @@
 import { NextPage } from "next";
 
 //* components *//
-import { About } from "../components/about";
-import { Hero } from "../components/hero";
-import { Projects } from "../components/projects";
-import { Skills } from "../components/skills";
-import { Contact } from "../components/contact";
+import { About } from "@/components/about";
+import { Hero } from "@/components/hero";
+import { Projects } from "@/components/projects";
+import { Skills } from "@/components/skills";
+import { Contact } from "@/components/contact";
 
 //* layout *//
-import { MainLayout } from "../components/layout";
+import { MainLayout } from "@/layout";
 
 const Home: NextPage = () => {
   return (

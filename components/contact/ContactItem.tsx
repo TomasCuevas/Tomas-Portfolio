@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IconType } from "react-icons";
 
+//* interface *//
 interface Props {
   icon: IconType;
   link?: string;

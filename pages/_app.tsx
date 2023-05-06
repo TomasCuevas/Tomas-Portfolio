@@ -1,10 +1,10 @@
 import { AppProps } from "next/app";
 
 //* providers *//
-import { UIProvider } from "../context";
+import { UIProvider } from "@/context";
 
 //* styles *//
-import "../styles/globals.css";
+import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
