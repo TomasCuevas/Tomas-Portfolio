@@ -2,11 +2,11 @@ import { useContext } from "react";
 import Head from "next/head";
 
 //* components *//
-import { Header } from "../header";
-import { Sidebar } from "../sidebar";
+import { Header } from "@/components/header";
+import { Sidebar } from "@/components/sidebar";
 
 //* context *//
-import { UIContext } from "../../context";
+import { UIContext } from "@/context";
 
 //* interface *//
 interface Props {
