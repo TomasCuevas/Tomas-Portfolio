@@ -1,12 +1,7 @@
-import { useContext } from "react";
 import Head from "next/head";
 
 //* components *//
-import { Header } from "@/components/header";
-import { Sidebar } from "@/components/sidebar";
-
-//* context *//
-import { UIContext } from "@/context";
+import { Header, MobileSidebar } from "@/components/layout";
 
 //* interface *//
 interface Props {
@@ -20,17 +15,16 @@ export const MainLayout: React.FC<Props> = ({
   description,
   title,
 }) => {
-  const { isSidebarOpen } = useContext(UIContext);
-
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-      {isSidebarOpen ? <Sidebar /> : null}
+
+      <MobileSidebar />
       <Header />
-      <main className="flex min-h-screen flex-col items-center overflow-x-hidden bg-dark">
+      <main className="flex min-h-screen snap-y snap-mandatory flex-col items-center overflow-x-hidden bg-dark">
         {children}
       </main>
     </>
