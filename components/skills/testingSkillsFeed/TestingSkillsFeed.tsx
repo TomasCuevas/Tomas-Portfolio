@@ -1,6 +1,6 @@
 //* components *//
-import { SkillCard } from "./";
-import { SkillsFeedHoc } from "../ui";
+import { SkillCard } from "../";
+import { SkillsFeedHoc } from "@/components/ui";
 
 export const TestingSkillsFeed: React.FC = () => {
   return (

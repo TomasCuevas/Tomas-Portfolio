@@ -6,12 +6,12 @@ import {
   FrontendSkillsFeed,
   SkillChooseSection,
   TestingSkillsFeed,
-} from "./";
-import { SectionTitle, SectionXHoc } from "../ui";
+  ToolsSkillsFeed,
+} from "../";
+import { SectionTitle, SectionXHoc } from "@/components/ui";
 
 //* context *//
-import { UIContext } from "../../context";
-import { ToolsSkillsFeed } from "./ToolsSkillsFeed";
+import { UIContext } from "@/context";
 
 export const Skills: React.FC = () => {
   const { skillSectionChoosed } = useContext(UIContext);
