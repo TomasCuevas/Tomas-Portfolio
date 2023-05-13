@@ -1,16 +1,16 @@
 import { useContext } from "react";
 
 //* data *//
-import projects from "../../data/projects.json";
+import projects from "@/data/projects.json";
 
 //* icons *//
 import { BsGridFill, BsGrid, BsListUl } from "react-icons/bs";
 
 //* components *//
-import { ProjectCard, ProjectCardExpanded } from "./";
+import { ProjectCard, ProjectCardExpanded } from "../";
 
 //* context *//
-import { UIContext } from "../../context";
+import { UIContext } from "@/context";
 
 export const DesktopProjectsFeed: React.FC = () => {
   const { projectsViewStyle, setProjectsViewStyle } = useContext(UIContext);

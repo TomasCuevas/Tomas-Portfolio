@@ -1,6 +1,6 @@
 //* components *//
-import { SectionTitle, SectionXHoc } from "../ui";
-import { DesktopProjectsFeed, MobileProjectsFeed } from "./";
+import { SectionTitle, SectionXHoc } from "@/components/ui";
+import { DesktopProjectsFeed, MobileProjectsFeed } from "../";
 
 export const Projects: React.FC = () => {
   return (

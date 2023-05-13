@@ -1,52 +1,30 @@
-import NextLink from "next/link";
-import { motion, Variants } from "framer-motion";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 //* icons *//
 import { TbLocation, TbBrandGithub } from "react-icons/tb";
 
+//* animation variants *//
+import {
+  articleAnimation,
+  descriptionAnimation,
+  imageAnimation,
+  titleAnimation,
+} from "./projectCardExpanded.animations";
+
 //* interfaces *//
-import { IProject } from "../../interfaces/Project";
+import { IProject } from "@/interfaces";
 
 interface Props {
   project: IProject;
 }
-
-//* animation variants *//
-const articleAnimation: Variants = {
-  offscreen: { opacity: 0, x: -150 },
-  onscreen: { opacity: 1, x: 0, transition: { duration: 1.5 } },
-};
-
-const imageAnimation: Variants = {
-  offscreen: { opacity: 0.1 },
-  onscreen: { opacity: 0.8 },
-};
-
-const titleAnimation: Variants = {
-  offscreen: { opacity: 0, y: 50 },
-  onscreen: { opacity: 1, y: 0 },
-};
-
-const descriptionAnimation: Variants = {
-  offscreen: {
-    opacity: 0,
-    y: -20,
-  },
-  onscreen: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
 
 export const ProjectCardExpanded: React.FC<Props> = ({ project }) => {
   return (
     <motion.article
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       variants={articleAnimation}
       className="group relative flex min-h-[370px] w-full overflow-hidden rounded-md"
     >
@@ -66,8 +44,8 @@ export const ProjectCardExpanded: React.FC<Props> = ({ project }) => {
           initial="offscreen"
           whileInView="onscreen"
           variants={titleAnimation}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 1.3, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.3, delay: 0.2 }}
           className="text-5xl font-light text-white"
         >
           {project.name}
@@ -94,14 +72,16 @@ export const ProjectCardExpanded: React.FC<Props> = ({ project }) => {
           ))}
         </div>
         <div className="flex items-center justify-end gap-5">
-          {project.link ? (
-            <NextLink href={project.link} target="_blank">
-              <TbLocation className="text-2xl text-white" />
-            </NextLink>
-          ) : null}
-          <NextLink href={project.repository} target="_blank">
+          <Link
+            href={project.link || ""}
+            target="_blank"
+            style={{ display: project.link ? "block" : "none" }}
+          >
+            <TbLocation className="text-2xl text-white" />
+          </Link>
+          <Link href={project.repository} target="_blank">
             <TbBrandGithub className="text-2xl text-white" />
-          </NextLink>
+          </Link>
         </div>
       </div>
     </motion.article>
