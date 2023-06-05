@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 //* icons *//
-import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
+import { FaLinkedin, FaGithubSquare, FaEye } from "react-icons/fa";
 import { RiEyeFill } from "react-icons/ri";
 
 //* components *//
@@ -75,8 +75,8 @@ export const Hero: React.FC = () => {
             href="/assets/Tomás_Cuevas_Curriculum_FullStack.pdf"
             className="flex items-center gap-2 py-1 px-3 text-lg font-light tracking-[1px]"
           >
-            <span>Ver CV</span>
-            <RiEyeFill />
+            <span>Ver Currículum</span>
+            <FaEye className="mt-[2px]" />
           </a>
         </button>
       </motion.div>
