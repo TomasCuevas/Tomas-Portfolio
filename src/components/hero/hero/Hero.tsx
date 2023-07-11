@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 //* icons *//
 import { FaLinkedin, FaGithubSquare, FaEye } from "react-icons/fa";
-import { RiEyeFill } from "react-icons/ri";
 
 //* components *//
 import { SectionTitle, SectionYHoc } from "@/components/ui";
@@ -22,12 +21,12 @@ export const Hero: React.FC = () => {
         />
       </div>
       <div>
-        <h1 className="text-2xl tracking-[1px] text-purple md:text-3xl">
+        <h1 className="text-2xl font-light tracking-[1px] text-purple md:text-3xl">
           Hola, mi nombre es
         </h1>
       </div>
       <SectionTitle title="Anselmo Tomás Cuevas." />
-      <div className="mb-8">
+      <div className="mb-4">
         <motion.h3
           initial="offscreen"
           whileInView="onscreen"
@@ -44,7 +43,7 @@ export const Hero: React.FC = () => {
           whileInView="onscreen"
           viewport={{ once: true, amount: 1 }}
           variants={textAnimation}
-          className="max-w-[500px] text-lg font-light tracking-[1px] text-white md:text-xl"
+          className="max-w-[600px] text-lg font-light tracking-[1px] text-white md:text-xl"
         >
           Como desarrollador fullstack, mi especialización se centra en el
           ecosistema de JavaScript. Me esfuerzo por mejorar continuamente para

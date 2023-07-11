@@ -1,9 +1,9 @@
 import { AppProps } from "next/app";
 
-//* providers *//
+//* PROVIDERS *//
 import { UIProvider } from "@/context";
 
-//* styles *//
+//* GLOBAL STYLES *//
 import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {

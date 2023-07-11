@@ -1,14 +1,12 @@
-import { motion } from "framer-motion";
-
 //* components *//
 import { SectionTitle, SectionXHoc } from "@/components/ui";
-import { AboutParagraph } from "../";
+import { AboutParagraph } from "@/components/about";
 
 export const About: React.FC = () => {
   return (
     <SectionXHoc id="about_me">
       <SectionTitle title="Acerca de mí" />
-      <div className="flex flex-col gap-3 xs:gap-4 md:gap-6">
+      <div className="flex flex-col gap-4 xs:gap-5 md:gap-7">
         <AboutParagraph
           paragraph="Desde muy temprana edad, me he sentido apasionado por el mundo del
       software. Mi primer acercamiento fue desarrollando pequeños scripts para
@@ -29,7 +27,7 @@ export const About: React.FC = () => {
           tanto como profesional como persona."
         />
         <AboutParagraph
-          paragraph="En algunos de mis proyectos personales, he enfrentado dificultades y
+          paragraph="En mis proyectos personales, he enfrentado dificultades y
           momentos de frustración, pero estos obstáculos me han enseñado que
           nunca debo rendirme. Para mí, cada reto es una oportunidad de
           aprendizaje y crecimiento, y estoy dispuesto a enfrentarlos con

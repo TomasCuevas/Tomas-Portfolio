@@ -7,7 +7,7 @@ export const articleAnimation: Variants = {
 
 export const imageAnimationMobile: Variants = {
   offscreen: { opacity: 0.1 },
-  onscreen: { opacity: 0.25 },
+  onscreen: { opacity: 0.4 },
 };
 
 export const titleAnimation: Variants = {

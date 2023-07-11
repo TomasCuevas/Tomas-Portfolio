@@ -36,7 +36,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
           viewport={{ once: false, amount: 0.9 }}
           src={project.cover}
           alt="Project cover"
-          className="h-full w-full rounded-md object-cover opacity-10 transition-all duration-300"
+          className="h-full w-full rounded-md object-cover opacity-10 transition-all duration-300 group-hover:scale-110"
         />
       </div>
       <div className="z-10 ml-auto flex flex-col justify-center gap-4">
@@ -65,7 +65,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
           {project.technologies.map((technologie) => (
             <span
               key={technologie}
-              className="rounded-md bg-purple/20 px-2 py-1 text-base font-thin tracking-[1px] text-light "
+              className="rounded-md bg-purple/50 px-2 py-1 text-base font-thin tracking-[1px] text-light"
             >
               {technologie}
             </span>

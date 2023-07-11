@@ -1,6 +1,6 @@
 import { Dispatch, useState } from "react";
 
-//* interface *//
+//* INTERFACE *//
 interface Return {
   error: string | undefined;
   formValues: any;

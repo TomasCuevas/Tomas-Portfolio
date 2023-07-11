@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-//* components *//
+//* COMPONENTS *//
 import { Header, MobileSidebar } from "@/components/layout";
 
-//* interface *//
+//* INTERFACE *//
 interface Props {
   children: React.ReactNode;
   description: string;
