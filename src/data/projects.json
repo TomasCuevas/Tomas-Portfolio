@@ -40,6 +40,32 @@
     "link": "https://teslo-tc.vercel.app/"
   },
   {
+    "name": "Labor",
+    "cover": "/projects/labor-cover.jpg",
+    "technologies": [
+      "Next",
+      "React",
+      "Tailwind",
+      "PostgreSQL",
+      "NestJs",
+      "React-Query",
+      "Docker",
+      "TypeScript",
+      "TypeORM"
+    ],
+    "repository": "https://github.com/TomasCuevas/Labor",
+    "description": "Clon funcional de Trello con el objetivo principal de mejorar mis habilidades en el desarrollo de backend utilizando NestJS y en la gestión de bases de datos con PostgreSQL. Además, implementé mis mejores conocimientos para crear un frontend totalmente funcional y optimizado utilizando ReactJS junto a  NextJS.",
+    "link": "https://labor-client.vercel.app"
+  },
+  {
+    "name": "Whiteblack",
+    "cover": "/projects/whiteblack-cover.jpg",
+    "technologies": ["Next", "React", "Tailwind", "TypeScript"],
+    "repository": "https://github.com/TomasCuevas/whiteblack",
+    "description": "Blog personal completamente construido con Next.js y Tailwind. En este blog, comparto artículos sobre desarrollo web y desarrollo en general. El desarrollo de este blog me permitió fortalecer mis habilidades en Next.js y Tailwind, así como mejorar mis habilidades de redacción y comunicación. ",
+    "link": "https://whiteblack.vercel.app"
+  },
+  {
     "name": "Visualizer",
     "cover": "/projects/visualizer-cover.jpg",
     "technologies": [
