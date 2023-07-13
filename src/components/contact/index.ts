@@ -1,2 +1,2 @@
-export * from "./contact/Contact";
-export * from "./contactItem/ContactItem";
+export * from "./Contact/Contact";
+export * from "./ContactItem/ContactItem";

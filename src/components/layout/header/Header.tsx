@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
 
-//* icons *//
+//* ICONS *//
 import { MdMenu } from "react-icons/md";
 
-//* context *//
+//* CONTEXT *//
 import { UIContext } from "@/context";
 
-//* animation variants *//
-import { headerAnimation } from "./header.animations";
+//* ANIMATION VARIANTS *//
+import { headerVariants } from "./header.animations";
 
 export const Header: React.FC = () => {
   const { toggleSidebar } = useContext(UIContext);
@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
     <motion.header
       initial="offscreen"
       whileInView="onscreen"
-      variants={headerAnimation}
+      variants={headerVariants}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, delay: 1 }}
       className="fixed top-0 left-0 z-20 flex h-[66px] w-full items-end justify-center bg-[#0000] px-4 backdrop-blur-sm xs:px-10 md:h-20 md:px-16 lg:px-8 xl:px-0"

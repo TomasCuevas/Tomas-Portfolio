@@ -1,3 +1,3 @@
-export * from "./formButtonPrimary/FormButtonPrimary";
-export * from "./formInputPrimary/FormInputPrimary";
-export * from "./formTextarea/FormTextarea";
+export * from "./FormButtonPrimary/FormButtonPrimary";
+export * from "./FormInputPrimary/FormInputPrimary";
+export * from "./FormTextarea/FormTextarea";

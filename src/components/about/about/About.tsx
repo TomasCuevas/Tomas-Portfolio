@@ -1,6 +1,5 @@
-//* components *//
-import { SectionTitle, SectionXHoc } from "@/components/ui";
-import { AboutParagraph } from "@/components/about";
+//* COMPONENTS *//
+import { SectionTitle, SectionXHoc, AboutParagraph } from "@/components";
 
 export const About: React.FC = () => {
   return (

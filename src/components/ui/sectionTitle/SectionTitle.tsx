@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-//* animation variants *//
-import { borderAnimation } from "./sectionTitle.animations";
+//* ANIMATION VARIANTS *//
+import { borderVariants } from "./sectionTitle.animations";
 
-//* interface *//
+//* INTERFACE *//
 interface Props {
   title: string;
 }
@@ -19,7 +19,7 @@ export const SectionTitle: React.FC<Props> = ({ title }) => {
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
-        variants={borderAnimation}
+        variants={borderVariants}
         viewport={{ once: false, amount: 0.1 }}
         transition={{ delay: 0.2, duration: 1 }}
         className="mb-4 h-[2px] w-full bg-light"

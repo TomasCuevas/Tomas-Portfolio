@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-//* animation variants *//
-import { sectionAnimation } from "./sectionXHoc.animations";
+//* ANIMATION VARIANTS *//
+import { sectionVariants } from "./sectionXHoc.animations";
 
-//* interface *//
+//* INTERFACE *//
 interface Props {
   children: React.ReactNode;
   id: string;
@@ -14,7 +14,7 @@ export const SectionXHoc: React.FC<Props> = ({ children, id }) => {
     <motion.section
       initial="offscreen"
       whileInView="onscreen"
-      variants={sectionAnimation}
+      variants={sectionVariants}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 1 }}
       id={id}

@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-export const headerAnimation: Variants = {
+export const headerVariants: Variants = {
   offscreen: { opacity: 0 },
   onscreen: { opacity: 1 },
 };

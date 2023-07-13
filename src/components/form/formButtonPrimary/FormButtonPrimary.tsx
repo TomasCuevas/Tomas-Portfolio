@@ -1,4 +1,4 @@
-//* interface *//
+//* INTERFACE *//
 interface Props {
   className?: string;
   isDisabled: boolean;

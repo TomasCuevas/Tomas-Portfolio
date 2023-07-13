@@ -1,16 +1,17 @@
 import { useContext } from "react";
 
-//* components *//
+//* COMPONENTS *//
 import {
   BackendSkillsFeed,
   FrontendSkillsFeed,
+  SectionTitle,
+  SectionXHoc,
   SkillChooseSection,
   TestingSkillsFeed,
   ToolsSkillsFeed,
-} from "../";
-import { SectionTitle, SectionXHoc } from "@/components/ui";
+} from "@/components";
 
-//* context *//
+//* CONTEXT *//
 import { UIContext } from "@/context";
 
 export const Skills: React.FC = () => {

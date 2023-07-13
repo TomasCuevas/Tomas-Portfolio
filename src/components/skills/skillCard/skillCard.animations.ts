@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-export const carAnimations: Variants = {
+export const carVariants: Variants = {
   onscreen: {
     scale: 1,
     rotate: 0,

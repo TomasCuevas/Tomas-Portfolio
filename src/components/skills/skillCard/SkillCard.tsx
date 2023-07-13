@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-//* animation variants *//
-import { carAnimations } from "./skillCard.animations";
+//* ANIMATION VARIANTS *//
+import { carVariants } from "./skillCard.animations";
 
-//* interface *//
+//* INTERFACE *//
 interface Props {
   img: string;
   name: string;
@@ -14,7 +14,7 @@ export const SkillCard: React.FC<Props> = ({ img, name }) => {
     <motion.div
       animate="onscreen"
       whileHover="hover"
-      variants={carAnimations}
+      variants={carVariants}
       className="mx-auto flex w-full flex-col items-center justify-center gap-2 rounded-lg bg-light/20 p-2"
     >
       <img

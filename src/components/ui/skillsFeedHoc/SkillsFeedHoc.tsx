@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-//* interface *//
+//* INTERFACE *//
 interface Props {
   children: React.ReactNode;
 }

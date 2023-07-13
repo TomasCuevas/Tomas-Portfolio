@@ -1,6 +1,6 @@
 import { useEffect, useState, FormEvent } from "react";
 
-//* interface *//
+//* INTERFACE *//
 interface Props {
   inputChange: any;
   inputName: string;

@@ -1,13 +1,9 @@
 import { NextPage } from "next";
 
-//* components *//
-import { About } from "@/components/about";
-import { Hero } from "@/components/hero";
-import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills";
-import { Contact } from "@/components/contact";
+//* COMPONENTS *//
+import { About, Hero, Projects, Skills, Contact } from "@/components";
 
-//* layout *//
+//* LAYOUT *//
 import { MainLayout } from "@/layout";
 
 const Home: NextPage = () => {

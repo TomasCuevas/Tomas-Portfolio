@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-//* animation variants *//
-import { textAnimation } from "./aboutParagraph.animations";
+//* ANIMATION VARIANTS *//
+import { textVariants } from "./aboutParagraph.animations";
 
-//* interface *//
+//* INTERFACE *//
 interface Props {
   paragraph: string;
 }
@@ -13,7 +13,7 @@ export const AboutParagraph: React.FC<Props> = ({ paragraph }) => {
     <motion.p
       initial="offscreen"
       whileInView="onscreen"
-      variants={textAnimation}
+      variants={textVariants}
       viewport={{ once: true, amount: 0.4 }}
       className="text-lg font-light tracking-[1px] text-white sm:text-xl lg:text-2xl"
     >

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-//* context *//
+//* CONTEXT *//
 import { UIContext } from "@/context";
 
 export const SkillChooseSection: React.FC = () => {

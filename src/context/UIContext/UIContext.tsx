@@ -2,14 +2,15 @@ import { createContext, useState, Dispatch } from "react";
 
 //* CONTEXT *//
 //* CONTEXT *//
+type skillSectionsToChoose = "frontend" | "backend" | "tools" | "testing";
+type projectViewStyles = "list" | "card";
+
 interface UIContextProps {
   isSidebarOpen: boolean;
-  projectsViewStyle: "list" | "card";
-  skillSectionChoosed: "frontend" | "backend" | "tools" | "testing";
-  setProjectsViewStyle: Dispatch<"list" | "card">;
-  setSkillSectionChoosed: Dispatch<
-    "frontend" | "backend" | "tools" | "testing"
-  >;
+  projectsViewStyle: projectViewStyles;
+  skillSectionChoosed: skillSectionsToChoose;
+  setProjectsViewStyle: Dispatch<projectViewStyles>;
+  setSkillSectionChoosed: Dispatch<skillSectionsToChoose>;
   toggleSidebar(): void;
 }
 
@@ -22,13 +23,11 @@ interface UIProviderProps {
 }
 
 export const UIProvider: React.FC<UIProviderProps> = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-  const [projectsViewStyle, setProjectsViewStyle] = useState<"list" | "card">(
-    "list"
-  );
-  const [skillSectionChoosed, setSkillSectionChoosed] = useState<
-    "frontend" | "backend" | "tools" | "testing"
-  >("frontend");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [projectsViewStyle, setProjectsViewStyle] =
+    useState<projectViewStyles>("list");
+  const [skillSectionChoosed, setSkillSectionChoosed] =
+    useState<skillSectionsToChoose>("frontend");
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => {

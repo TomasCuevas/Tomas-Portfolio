@@ -1,2 +1,2 @@
-export * from "./about/About";
-export * from "./aboutParagraph/AboutParagrah";
+export * from "./About/About";
+export * from "./AboutParagraph/AboutParagrah";

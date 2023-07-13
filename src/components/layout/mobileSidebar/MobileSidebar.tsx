@@ -1,18 +1,18 @@
 import { useContext } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
-//* icons *//
+//* ICONS *//
 import { MdClose } from "react-icons/md";
 
-//* context *//
+//* CONTEXT *//
 import { UIContext } from "@/context";
 
-//* animation variants *//
+//* ANIMATION VARIANTS *//
 import {
-  asideAnimation,
-  borderAnimation,
-  contactAnimation,
-  textAnimation,
+  asideVariants,
+  borderVariants,
+  contactVariants,
+  textVariants,
 } from "./mobileSidebar.animations";
 
 export const MobileSidebar: React.FC = () => {
@@ -28,7 +28,7 @@ export const MobileSidebar: React.FC = () => {
     <motion.aside
       initial="offscreen"
       animate="onscreen"
-      variants={asideAnimation}
+      variants={asideVariants}
       className="fixed top-0 left-0 z-50 h-screen w-screen bg-dark/80 backdrop-blur-xl md:hidden"
     >
       <div className="mb-2 flex h-20 items-center justify-end p-4 xs:px-10">
@@ -44,7 +44,7 @@ export const MobileSidebar: React.FC = () => {
           <motion.li
             initial="offscreen"
             animate="onscreen"
-            variants={contactAnimation}
+            variants={contactVariants}
             onClick={toggleSidebar}
             className="w-full rounded-md border border-light/80 text-center text-2xl text-light/80 transition-all duration-300 hover:border-light hover:text-light"
           >
@@ -59,7 +59,7 @@ export const MobileSidebar: React.FC = () => {
               <motion.span
                 initial="offscreen"
                 animate="onscreen"
-                variants={textAnimation}
+                variants={textVariants}
                 className="flex w-full pb-2 text-light/60 transition-all duration-300 hover:text-light"
               >
                 Inicio
@@ -68,7 +68,7 @@ export const MobileSidebar: React.FC = () => {
             <motion.div
               initial="offscreen"
               animate="onscreen"
-              variants={borderAnimation}
+              variants={borderVariants}
               className="h-[1px] w-full bg-purple"
             ></motion.div>
           </li>
@@ -77,7 +77,7 @@ export const MobileSidebar: React.FC = () => {
               <motion.span
                 initial="offscreen"
                 animate="onscreen"
-                variants={textAnimation}
+                variants={textVariants}
                 className="flex w-full pb-2 text-light/60 transition-all duration-300 hover:text-light"
               >
                 Acerca de
@@ -86,7 +86,7 @@ export const MobileSidebar: React.FC = () => {
             <motion.div
               initial="offscreen"
               animate="onscreen"
-              variants={borderAnimation}
+              variants={borderVariants}
               className="h-[1px] w-full bg-purple"
             ></motion.div>
           </li>
@@ -98,7 +98,7 @@ export const MobileSidebar: React.FC = () => {
               <motion.span
                 initial="offscreen"
                 animate="onscreen"
-                variants={textAnimation}
+                variants={textVariants}
                 className="flex w-full pb-2 text-light/60 transition-all duration-300 hover:text-light"
               >
                 Proyectos
@@ -107,7 +107,7 @@ export const MobileSidebar: React.FC = () => {
             <motion.div
               initial="offscreen"
               animate="onscreen"
-              variants={borderAnimation}
+              variants={borderVariants}
               className="h-[1px] w-full bg-purple"
             ></motion.div>
           </li>
@@ -119,7 +119,7 @@ export const MobileSidebar: React.FC = () => {
               <motion.span
                 initial="offscreen"
                 animate="onscreen"
-                variants={textAnimation}
+                variants={textVariants}
                 className="flex w-full pb-2 text-light/60 transition-all duration-300 hover:text-light"
               >
                 Habilidades
@@ -127,7 +127,7 @@ export const MobileSidebar: React.FC = () => {
               <motion.div
                 initial="offscreen"
                 animate="onscreen"
-                variants={borderAnimation}
+                variants={borderVariants}
                 className="h-[1px] w-full bg-purple"
               ></motion.div>
             </button>

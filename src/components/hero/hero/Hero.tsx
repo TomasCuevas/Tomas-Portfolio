@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-//* icons *//
+//* ICONS *//
 import { FaLinkedin, FaGithubSquare, FaEye } from "react-icons/fa";
 
-//* components *//
-import { SectionTitle, SectionYHoc } from "@/components/ui";
+//* COMPONENTS *//
+import { SectionTitle, SectionYHoc } from "@/components";
 
-//* animation variants *//
-import { textAnimation } from "./hero.animations";
+//* ANIMATION VARIANTS *//
+import { textVariants } from "./hero.animations";
 
 export const Hero: React.FC = () => {
   return (
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 1 }}
-          variants={textAnimation}
+          variants={textVariants}
           className="text-5xl tracking-[1px] text-purple sm:text-6xl"
         >
           Navegando por el mundo del desarrollo web
@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 1 }}
-          variants={textAnimation}
+          variants={textVariants}
           className="max-w-[600px] text-lg font-light tracking-[1px] text-white md:text-xl"
         >
           Como desarrollador fullstack, mi especialización se centra en el
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.2 }}
-        variants={textAnimation}
+        variants={textVariants}
         transition={{ delay: 1 }}
         className="my-4 flex items-center gap-4"
       >

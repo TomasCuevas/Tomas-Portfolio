@@ -5,13 +5,13 @@ import emailjs from "@emailjs/browser";
 import { FaLinkedin, FaGithubSquare, FaAt } from "react-icons/fa";
 
 //* COMPONENTS *//
-import { ContactItem } from "@/components/contact";
 import {
+  ContactItem,
   FormButtonPrimary,
   FormInputPrimary,
   FormTextarea,
-} from "@/components/form";
-import { SectionTitle } from "@/components/ui";
+  SectionTitle,
+} from "@/components";
 
 //* FORM VALUES AND FORM VALIDATIONS *//
 import { formValidations, formValues } from "./contact.form";

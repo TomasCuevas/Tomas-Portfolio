@@ -1,6 +1,6 @@
 import { Variants } from "framer-motion";
 
-export const textAnimation: Variants = {
+export const textVariants: Variants = {
   offscreen: {
     opacity: 0,
     y: -20,
