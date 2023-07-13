@@ -1,10 +1,10 @@
-import { FormEvent } from "react";
+import { useFormik } from "formik";
 import emailjs from "@emailjs/browser";
 
-//* icons *//
+//* ICONS *//
 import { FaLinkedin, FaGithubSquare, FaAt } from "react-icons/fa";
 
-//* components *//
+//* COMPONENTS *//
 import { ContactItem } from "@/components/contact";
 import {
   FormButtonPrimary,
@@ -13,44 +13,29 @@ import {
 } from "@/components/form";
 import { SectionTitle } from "@/components/ui";
 
-//* hooks *//
-import { useForm } from "@/hooks";
-
-//* helpers *//
-import { emailValidation, messageValidation, nameValidation } from "@/helpers";
+//* FORM VALUES AND FORM VALIDATIONS *//
+import { formValidations, formValues } from "./contact.form";
 
 export const Contact: React.FC = () => {
-  const {
-    user_name,
-    user_email,
-    user_message,
-    isSending,
-    onInputChange,
-    setIsSending,
-    reset,
-  } = useForm({
-    user_name: "",
-    user_email: "",
-    user_message: "",
+  const formik = useFormik({
+    initialValues: formValues(),
+    validationSchema: formValidations(),
+    validateOnMount: true,
+    onSubmit: async (formValues) => {
+      try {
+        const status = await emailjs.send(
+          process.env.NEXT_PUBLIC_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+          formValues,
+          process.env.NEXT_PUBLIC_PUBLIC_ID!
+        );
+
+        if (status.status === 200) formik.resetForm();
+      } catch (error) {
+        console.error(error);
+      }
+    },
   });
-
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSending(true);
-
-    const status = await emailjs.sendForm(
-      process.env.NEXT_PUBLIC_SERVICE_ID!,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-      event.currentTarget,
-      process.env.NEXT_PUBLIC_PUBLIC_ID!
-    );
-
-    if (status.status === 200) {
-      reset();
-    }
-
-    setIsSending(false);
-  };
 
   return (
     <section
@@ -79,34 +64,34 @@ export const Contact: React.FC = () => {
               text="tomas.contact.dev@gmail.com"
             />
           </div>
-          <form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
+          <form
+            className="flex w-full flex-col gap-4"
+            onSubmit={formik.handleSubmit}
+          >
             <FormInputPrimary
               inputName="user_name"
               label="Nombre"
-              inputValue={user_name}
-              inputChange={onInputChange}
+              inputValue={formik.values.user_name}
+              inputChange={formik.handleChange}
             />
             <FormInputPrimary
               inputName="user_email"
               label="Email"
-              inputValue={user_email}
-              inputChange={onInputChange}
+              inputValue={formik.values.user_email}
+              inputChange={formik.handleChange}
             />
             <FormTextarea
-              inputChange={onInputChange}
               inputName="user_message"
-              inputValue={user_message}
               label="Mensaje"
               max={1000}
+              inputValue={formik.values.user_message}
+              inputChange={formik.handleChange}
             />
             <FormButtonPrimary
               label="Enviar"
               type="submit"
               isDisabled={
-                isSending ||
-                !emailValidation(user_email) ||
-                !nameValidation(user_name) ||
-                !messageValidation(user_message)
+                formik.isSubmitting || Object.keys(formik.errors).length > 0
               }
             />
           </form>
