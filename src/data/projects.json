@@ -16,7 +16,7 @@
       "Mongoose"
     ],
     "repository": "https://github.com/TomasCuevas/Evlun",
-    "description": "Clon de Twitter 100% funcional. Realizado totalmente desde 0, para aplicar todos mis conocimientos en un reto con una dificultad avanzada. En él, puedes crear una cuenta, seguir usuarios, escribir posts, responder a posts propios como ajenos, likear posts y demás.",
+    "description": " Clon funcional de Twitter creado desde cero como un desafío avanzado. Incluye registro de cuenta, seguir usuarios, publicar tweets, responder a tweets propios y ajenos, dar 'me gusta' y más.",
     "link": "https://evlun.vercel.app"
   },
   {
@@ -36,7 +36,7 @@
       "Mongoose"
     ],
     "repository": "https://github.com/TomasCuevas/Teslo",
-    "description": "Un ecommerce realizado en un curso que tome de NextJs. Tras terminar el curso, decidí tomar la aplicación y pulirla, refactorizar el Código, mejorar los estilos, mejorar el performance y el responsive de la aplicación.",
+    "description": "Ecommerce realizado en un curso de Next.js. Después de finalizar el curso, decidí refinar la aplicación: refactorizar el código, mejorar los estilos, optimizar el rendimiento y hacerla completamente responsive.",
     "link": "https://teslo-tc.vercel.app/"
   },
   {
@@ -54,7 +54,7 @@
       "TypeORM"
     ],
     "repository": "https://github.com/TomasCuevas/Labor",
-    "description": "Clon funcional de Trello con el objetivo principal de mejorar mis habilidades en el desarrollo de backend utilizando NestJS y en la gestión de bases de datos con PostgreSQL. Además, implementé mis mejores conocimientos para crear un frontend totalmente funcional y optimizado utilizando ReactJS junto a  NextJS.",
+    "description": "Clon de Trello para mejorar habilidades en desarrollo backend con NestJS y gestión de bases de datos con PostgreSQL. Frontend funcional y optimizado con ReactJS y NextJS.",
     "link": "https://labor-client.vercel.app"
   },
   {
@@ -62,7 +62,7 @@
     "cover": "/projects/whiteblack-cover.jpg",
     "technologies": ["Next", "React", "Tailwind", "TypeScript"],
     "repository": "https://github.com/TomasCuevas/whiteblack",
-    "description": "Blog personal completamente construido con Next.js y Tailwind. En este blog, comparto artículos sobre desarrollo web y desarrollo en general. El desarrollo de este blog me permitió fortalecer mis habilidades en Next.js y Tailwind, así como mejorar mis habilidades de redacción y comunicación. ",
+    "description": "Blog personal desarrollado con Next.js y Tailwind. En el escribo artículos sobre desarrollo web y otros temas relacionados. Al desarrollarlo reforcé mis habilidades en Next.js, Tailwind, redacción y comunicación.",
     "link": "https://whiteblack.vercel.app"
   },
   {
@@ -93,7 +93,7 @@
       "TypeScript"
     ],
     "repository": "https://github.com/TomasCuevas/Atomic-Notes",
-    "description": "Aplicación que permite la creación y edición de notas, a las mimas, se les puede agregar imágenes. Se utiliza Firebase para el manejo autenticación y Firestore como base de datos, junto a Cloudinary para el almacenamiento de imágenes.",
+    "description": "Aplicación para crear y editar notas con la capacidad de agregar imágenes. Utiliza Firebase para la autenticación y Firestore como base de datos, junto con Cloudinary para el almacenamiento de imágenes.",
     "link": "https://atomic-notes.vercel.app"
   },
   {
@@ -108,7 +108,7 @@
       "Framer-Motion"
     ],
     "repository": "https://github.com/TomasCuevas/Pokedex-TC",
-    "description": "Web de listado de pokemones, utilizando la API de PokeAPI. Se pueden listar todos los pokemones, listar por tipo de pokemon, guardar pokemon en favoritos, quitarlos de favoritos, visualizar página de pokemon seleccionado y buscar pokemon en el buscador integrado.",
+    "description": "Web de listado de pokemones con la API de PokeAPI. Funciones incluidas: listar todos los pokemones, filtrar por tipo, guardar/quitar de favoritos, ver detalles del pokemon seleccionado y buscar en el buscador integrado.",
     "link": "https://pokedex-tc.vercel.app/"
   }
 ]
