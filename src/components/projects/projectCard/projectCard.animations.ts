@@ -1,21 +1,21 @@
 import { Variants } from "framer-motion";
 
-export const articleAnimation: Variants = {
+export const articleVariants: Variants = {
   offscreen: { opacity: 0, x: -150 },
   onscreen: { opacity: 1, x: 0, transition: { duration: 1.5 } },
 };
 
-export const imageAnimationMobile: Variants = {
+export const imageMobileVariants: Variants = {
   offscreen: { opacity: 0.1 },
-  onscreen: { opacity: 0.4 },
+  onscreen: { opacity: 0.25 },
 };
 
-export const titleAnimation: Variants = {
+export const titleVariants: Variants = {
   offscreen: { opacity: 0, y: 50 },
   onscreen: { opacity: 1, y: 0 },
 };
 
-export const descriptionAnimation: Variants = {
+export const descriptionVariants: Variants = {
   offscreen: {
     opacity: 0,
   },

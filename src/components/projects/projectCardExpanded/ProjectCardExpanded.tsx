@@ -1,37 +1,45 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-//* icons *//
+//* ICONS *//
 import { TbLocation, TbBrandGithub } from "react-icons/tb";
 
-//* animation variants *//
+//* ANIMATION VARIANTS *//
 import {
-  articleAnimation,
-  descriptionAnimation,
-  imageAnimation,
-  titleAnimation,
+  articleVariants,
+  descriptionVariants,
+  imageVariants,
+  titleVariants,
 } from "./projectCardExpanded.animations";
 
-//* interfaces *//
+//* INTERFACES *//
 import { IProject } from "@/interfaces";
 
 interface Props {
   project: IProject;
+  reverse?: boolean;
 }
 
-export const ProjectCardExpanded: React.FC<Props> = ({ project }) => {
+export const ProjectCardExpanded: React.FC<Props> = ({
+  project,
+  reverse = false,
+}) => {
   return (
     <motion.article
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.2 }}
-      variants={articleAnimation}
+      variants={articleVariants}
       className="group relative flex min-h-[370px] w-full overflow-hidden rounded-md"
     >
-      <div className="absolute top-0 left-0 flex h-auto w-[60%] max-w-[580px] overflow-visible rounded-md bg-purple/50">
+      <div
+        className={`absolute top-5 ${
+          reverse ? "left-0" : "right-0"
+        } flex h-auto w-[60%] max-w-[580px] overflow-visible rounded-md bg-purple/50`}
+      >
         <motion.img
           initial="offscreen"
-          variants={imageAnimation}
+          variants={imageVariants}
           viewport={{ once: false, amount: 0.9 }}
           whileInView="onscreen"
           src={project.cover}
@@ -39,11 +47,15 @@ export const ProjectCardExpanded: React.FC<Props> = ({ project }) => {
           className="h-auto w-full rounded-md object-cover opacity-20 shadow-lg transition-all duration-300 group-hover:opacity-60"
         />
       </div>
-      <div className="z-10 ml-auto flex w-[50%] flex-col items-end justify-center gap-4">
+      <div
+        className={`z-10 flex w-[50%] flex-col ${
+          reverse ? "items-end ml-auto" : "items-start"
+        } justify-center gap-4`}
+      >
         <motion.h3
           initial="offscreen"
           whileInView="onscreen"
-          variants={titleAnimation}
+          variants={titleVariants}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1.3, delay: 0.2 }}
           className="text-5xl font-light text-white"
@@ -54,18 +66,22 @@ export const ProjectCardExpanded: React.FC<Props> = ({ project }) => {
           <motion.p
             initial="offscreen"
             whileInView="onscreen"
-            variants={descriptionAnimation}
+            variants={descriptionVariants}
             viewport={{ once: false, amount: 0.2 }}
             className="flex flex-wrap gap-[3px] px-8 py-4 text-lg font-light leading-8 text-purple "
           >
             {project.description}
           </motion.p>
         </div>
-        <div className="flex flex-wrap justify-end gap-3 gap-y-2 xl:max-w-[90%]">
+        <div
+          className={`flex flex-wrap ${
+            reverse ? "justify-end" : "justify-start"
+          } gap-3 gap-y-2 xl:max-w-[90%]`}
+        >
           {project.technologies.map((technologie) => (
             <span
               key={technologie}
-              className="rounded-md bg-purple/10 px-2 py-1 text-base font-thin tracking-[1px] text-light"
+              className="rounded-md bg-purple/10 px-2 py-1 text-sm font-thin tracking-[1px] text-light"
             >
               {technologie}
             </span>

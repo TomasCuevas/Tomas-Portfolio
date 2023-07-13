@@ -1,8 +1,8 @@
-//* data *//
+//* DATA *//
 import projects from "@/data/projects.json";
 
-//* components *//
-import { ProjectCard } from "../";
+//* COMPONENTS *//
+import { ProjectCard } from "@/components";
 
 export const MobileProjectsFeed: React.FC = () => {
   return (

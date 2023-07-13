@@ -1,18 +1,18 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-//* icons *//
+//* ICONS *//
 import { TbLocation, TbBrandGithub } from "react-icons/tb";
 
-//* animation variants *//
+//* ANIMATION VARIANTS *//
 import {
-  articleAnimation,
-  descriptionAnimation,
-  imageAnimationMobile,
-  titleAnimation,
+  articleVariants,
+  descriptionVariants,
+  imageMobileVariants,
+  titleVariants,
 } from "./projectCard.animations";
 
-//* interfaces *//
+//* INTERFACES *//
 import { IProject } from "@/interfaces";
 
 interface Props {
@@ -25,14 +25,14 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.3 }}
-      variants={articleAnimation}
+      variants={articleVariants}
       className="group relative flex w-full overflow-hidden rounded-md px-6 py-8 shadow-md shadow-purple/20 sm:p-16 md:px-6 md:py-8"
     >
       <div className="absolute top-0 left-0 flex h-full w-full overflow-hidden rounded-md bg-purple/10 ">
         <motion.img
           initial="offscreen"
           whileInView="onscreen"
-          variants={imageAnimationMobile}
+          variants={imageMobileVariants}
           viewport={{ once: false, amount: 0.9 }}
           src={project.cover}
           alt="Project cover"
@@ -43,7 +43,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
         <motion.h3
           initial="offscreen"
           whileInView="onscreen"
-          variants={titleAnimation}
+          variants={titleVariants}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1.3, delay: 0.5 }}
           className="text-4xl font-light text-light"
@@ -54,7 +54,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
           <motion.p
             initial="offscreen"
             whileInView="onscreen"
-            variants={descriptionAnimation}
+            variants={descriptionVariants}
             viewport={{ once: true, amount: 0.5 }}
             className="flex flex-wrap gap-[3px] font-light leading-7 text-white xs:text-lg"
           >
@@ -65,7 +65,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
           {project.technologies.map((technologie) => (
             <span
               key={technologie}
-              className="rounded-md bg-purple/50 px-2 py-1 text-base font-thin tracking-[1px] text-light"
+              className="rounded-md bg-purple/50 px-2 py-1 text-xs sm:text-sm font-thin tracking-[1px] text-light"
             >
               {technologie}
             </span>

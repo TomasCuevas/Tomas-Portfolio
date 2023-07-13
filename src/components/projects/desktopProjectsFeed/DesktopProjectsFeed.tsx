@@ -1,15 +1,15 @@
 import { useContext } from "react";
 
-//* data *//
+//* DATA *//
 import projects from "@/data/projects.json";
 
-//* icons *//
+//* ICONS *//
 import { BsGridFill, BsGrid, BsListUl } from "react-icons/bs";
 
-//* components *//
-import { ProjectCard, ProjectCardExpanded } from "../";
+//* COMPONENTS *//
+import { ProjectCard, ProjectCardExpanded } from "@/components";
 
-//* context *//
+//* CONTEXT *//
 import { UIContext } from "@/context";
 
 export const DesktopProjectsFeed: React.FC = () => {
@@ -34,9 +34,13 @@ export const DesktopProjectsFeed: React.FC = () => {
         </button>
       </div>
       {projectsViewStyle === "list" ? (
-        <div className="hidden w-full grid-cols-1 gap-12 lg:grid">
-          {projects.map((project) => (
-            <ProjectCardExpanded key={project.name} project={project} />
+        <div className="hidden w-full grid-cols-1 gap-14 lg:grid">
+          {projects.map((project, key) => (
+            <ProjectCardExpanded
+              key={project.name}
+              project={project}
+              reverse={key % 2 === 1}
+            />
           ))}
         </div>
       ) : (
