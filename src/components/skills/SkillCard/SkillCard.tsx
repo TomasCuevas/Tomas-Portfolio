@@ -15,14 +15,16 @@ export const SkillCard: React.FC<Props> = ({ img, name }) => {
       animate="onscreen"
       whileHover="hover"
       variants={carVariants}
-      className="mx-auto flex w-full flex-col items-center justify-center gap-2 rounded-lg bg-light/20 p-2"
+      className="mx-auto flex w-full flex-col items-center justify-center gap-2 rounded-lg bg-gray-400/20 dark:bg-light/20 p-2"
     >
       <img
         src={img}
         alt={`${name} logo`}
         className="md-w-16 h-16 w-16 object-contain sm:h-20 sm:w-20 md:h-16"
       />
-      <h4 className="text-center font-light text-white sm:text-lg">{name}</h4>
+      <h4 className="text-center font-light text-gray-800 dark:text-white sm:text-lg">
+        {name}
+      </h4>
     </motion.div>
   );
 };

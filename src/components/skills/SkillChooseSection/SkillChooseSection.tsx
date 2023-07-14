@@ -9,13 +9,13 @@ export const SkillChooseSection: React.FC = () => {
   const buttonClass = (skill: string): string => {
     return `border-b ${
       skillSectionChoosed === skill
-        ? "border-white text-white bg-darkLight"
-        : "border-light/50 text-light/50"
-    }  px-2 pb-[2px] text-xl font-light transition-all duration-300 rounded-t-md hover:bg-darkLight hover:text-white md:border-b-0 md:border-l-2 md:rounded-t-none md:rounded-r-md md:py-4`;
+        ? "text-dark border-dark bg-gray-300/40 dark:border-white dark:text-white dark:bg-darkLight"
+        : "border-light/50 text-gray-500 dark:text-light/50"
+    }  px-2 pb-[2px] text-base font-light transition-all rounded-t-md hover:bg-gray-300/40 dark:hover:bg-darkLight hover:text-dark dark:hover:text-white md:border-b-0 md:border-l-2 md:text-xl md:rounded-t-none md:rounded-r-md md:py-4`;
   };
 
   return (
-    <div className="flex w-full justify-center md:w-auto md:flex-col">
+    <div className="flex w-full justify-center flex-wrap md:w-auto md:flex-col">
       <button
         onClick={() => setSkillSectionChoosed("frontend")}
         className={buttonClass("frontend")}

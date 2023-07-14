@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 //* COMPONENTS *//
-import { Header, MobileSidebar } from "@/components";
+import { BottomWave, Header, MobileSidebar } from "@/components";
 
 //* INTERFACE *//
 interface Props {
@@ -25,8 +25,9 @@ export const MainLayout: React.FC<Props> = ({
       <MobileSidebar />
       <Header />
 
-      <main className="flex min-h-screen snap-y snap-mandatory flex-col items-center overflow-x-hidden bg-dark">
+      <main className="flex min-h-screen relative snap-y snap-mandatory flex-col items-center overflow-x-hidden dark:bg-dark bg-slate-100">
         {children}
+        <BottomWave />
       </main>
     </>
   );

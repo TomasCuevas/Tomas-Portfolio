@@ -4,7 +4,7 @@ import { useContext } from "react";
 import projects from "@/data/projects.json";
 
 //* ICONS *//
-import { BsGridFill, BsGrid, BsListUl } from "react-icons/bs";
+import { BsGridFill, BsGrid, BsListTask, BsListUl } from "react-icons/bs";
 
 //* COMPONENTS *//
 import { ProjectCard, ProjectCardExpanded } from "@/components";
@@ -19,17 +19,17 @@ export const DesktopProjectsFeed: React.FC = () => {
     <div>
       <div className="mb-5 mt-2 hidden items-center justify-end gap-5 px-8 lg:flex">
         <button onClick={() => setProjectsViewStyle("list")}>
-          <BsListUl
-            className={`h-9 w-9 ${
-              projectsViewStyle === "list" ? "text-purple" : "text-white"
-            }`}
-          />
+          {projectsViewStyle === "list" ? (
+            <BsListUl className="h-9 w-9 text-purple" />
+          ) : (
+            <BsListTask className="h-9 w-9 text-dark dark:text-white" />
+          )}
         </button>
         <button onClick={() => setProjectsViewStyle("card")}>
           {projectsViewStyle === "card" ? (
-            <BsGridFill className="h-7 w-7 text-purple" />
+            <BsGridFill className="h-7 mb-[2px] w-7 text-purple" />
           ) : (
-            <BsGrid className="h-7 w-7 text-white" />
+            <BsGrid className="h-7 mb-[2px] w-7 text-dark dark:text-white" />
           )}
         </button>
       </div>

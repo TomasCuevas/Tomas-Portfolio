@@ -2,7 +2,7 @@ import { Variants } from "framer-motion";
 
 export const articleVariants: Variants = {
   offscreen: { opacity: 0, x: -150 },
-  onscreen: { opacity: 1, x: 0, transition: { duration: 1.5 } },
+  onscreen: { opacity: 1, x: 0, transition: { duration: 1 } },
 };
 
 export const imageVariants: Variants = {
@@ -12,7 +12,7 @@ export const imageVariants: Variants = {
 
 export const titleVariants: Variants = {
   offscreen: { opacity: 0, y: 50 },
-  onscreen: { opacity: 1, y: 0 },
+  onscreen: { opacity: 1, y: 0, transition: { duration: 1.2 } },
 };
 
 export const descriptionVariants: Variants = {

@@ -15,7 +15,7 @@ export const AboutParagraph: React.FC<Props> = ({ paragraph }) => {
       whileInView="onscreen"
       variants={textVariants}
       viewport={{ once: true, amount: 0.4 }}
-      className="text-lg font-light tracking-[1px] text-white sm:text-xl lg:text-2xl"
+      className="text-lg font-light tracking-[1px] text-dark dark:text-white sm:text-xl lg:text-2xl"
     >
       {paragraph}
     </motion.p>

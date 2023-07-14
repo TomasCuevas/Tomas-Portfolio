@@ -28,7 +28,7 @@ export const About: React.FC = () => {
         <AboutParagraph
           paragraph="En mis proyectos personales, he enfrentado dificultades y
           momentos de frustración, pero estos obstáculos me han enseñado que
-          nunca debo rendirme. Para mí, cada reto es una oportunidad de
+          nunca debo rendirme, entender que cada reto es una oportunidad de
           aprendizaje y crecimiento, y estoy dispuesto a enfrentarlos con
           entusiasmo y determinación."
         />

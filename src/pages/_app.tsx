@@ -1,4 +1,5 @@
 import { AppProps } from "next/app";
+import { ThemeProvider } from "next-themes";
 
 //* PROVIDERS *//
 import { UIProvider } from "@/context";
@@ -8,9 +9,11 @@ import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <UIProvider>
-      <Component {...pageProps} />
-    </UIProvider>
+    <ThemeProvider attribute="class">
+      <UIProvider>
+        <Component {...pageProps} />
+      </UIProvider>
+    </ThemeProvider>
   );
 }
 

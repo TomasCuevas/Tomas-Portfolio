@@ -28,7 +28,7 @@ export const ProjectCardExpanded: React.FC<Props> = ({
     <motion.article
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.5 }}
       variants={articleVariants}
       className="group relative flex min-h-[370px] w-full overflow-hidden rounded-md"
     >
@@ -58,11 +58,11 @@ export const ProjectCardExpanded: React.FC<Props> = ({
           variants={titleVariants}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1.3, delay: 0.2 }}
-          className="text-5xl font-light text-white"
+          className="text-5xl font-light text-gray-800 dark:text-white"
         >
           {project.name}
         </motion.h3>
-        <div className="rounded-md bg-white shadow-xl shadow-purple/20 group-hover:shadow-purple/30">
+        <div className="rounded-md bg-white/90 text-dark shadow-md shadow-purple/20 group-hover:shadow-purple/30">
           <motion.p
             initial="offscreen"
             whileInView="onscreen"
@@ -81,7 +81,7 @@ export const ProjectCardExpanded: React.FC<Props> = ({
           {project.technologies.map((technologie) => (
             <span
               key={technologie}
-              className="rounded-md bg-purple/10 px-2 py-1 text-sm font-thin tracking-[1px] text-light"
+              className="rounded-md text-dark bg-gray-300/60 dark:bg-gray-800/20 px-2 py-1 text-sm font-thin tracking-[1px] dark:text-light"
             >
               {technologie}
             </span>
@@ -93,10 +93,10 @@ export const ProjectCardExpanded: React.FC<Props> = ({
             target="_blank"
             style={{ display: project.link ? "block" : "none" }}
           >
-            <TbLocation className="text-2xl text-white" />
+            <TbLocation className="text-2xl text-dark dark:text-white" />
           </Link>
           <Link href={project.repository} target="_blank">
-            <TbBrandGithub className="text-2xl text-white" />
+            <TbBrandGithub className="text-2xl text-dark dark:text-white" />
           </Link>
         </div>
       </div>

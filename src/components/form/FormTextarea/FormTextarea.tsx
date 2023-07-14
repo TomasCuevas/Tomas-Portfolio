@@ -70,7 +70,7 @@ export const FormTextarea: React.FC<Props> = ({
           inputChange(event);
           onInput(event);
         }}
-        className="mt-[20px] w-full resize-none overflow-hidden border-none bg-transparent text-lg font-medium text-purple outline-none"
+        className="mt-[20px] w-full resize-none overflow-hidden border-none bg-transparent text-lg font-medium text-black outline-none"
         style={{ height: focus ? height : 200 }}
       />
     </div>

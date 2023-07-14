@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
           whileInView="onscreen"
           viewport={{ once: true, amount: 1 }}
           variants={textVariants}
-          className="max-w-[600px] text-lg font-light tracking-[1px] text-white md:text-xl"
+          className="max-w-[600px] text-lg font-light tracking-[1px] text-dark dark:text-white md:text-xl"
         >
           Como desarrollador fullstack, mi especialización se centra en el
           ecosistema de JavaScript. Me esfuerzo por mejorar continuamente para
@@ -63,12 +63,12 @@ export const Hero: React.FC = () => {
           href="https://www.linkedin.com/in/tom%C3%A1s-cuevas-dev/"
           target="_blank"
         >
-          <FaLinkedin className="cursor-pointer text-4xl text-white/70 transition-all duration-300 hover:text-white" />
+          <FaLinkedin className="cursor-pointer text-4xl text-gray-700 hover:text-gray-900 dark:text-white/70 transition-all duration-300 dark:hover:text-white" />
         </Link>
         <Link href="https://github.com/TomasCuevas" target="_blank">
-          <FaGithubSquare className="cursor-pointer text-4xl text-white/70 transition-all duration-300 hover:text-white" />
+          <FaGithubSquare className="cursor-pointer text-4xl text-gray-700 hover:text-gray-900 dark:text-white/70 transition-all duration-300 dark:hover:text-white" />
         </Link>
-        <button className="items-center rounded-md border border-light/60 text-light/60 transition-all duration-300 hover:border-light hover:text-light">
+        <button className="items-center rounded-md border text-gray-700 hover:text-gray-900 border-gray-700 hover:border-gray-900 dark:border-light/60 dark:text-light/60 transition-all duration-300 dark:hover:border-light dark:hover:text-light">
           <a
             target="_blank"
             href="/assets/Tomás_Cuevas_Curriculum_FullStack.pdf"
