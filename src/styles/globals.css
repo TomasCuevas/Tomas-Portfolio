@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --scrollbar-track-color: #04030c; /* Valor predeterminado */
+}
+
 @font-face {
   font-family: "Roboto";
   src: url("/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
@@ -35,11 +39,15 @@
   overflow-y: hidden;
 }
 
+* {
+  transition: 0.2s all;
+}
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
   scrollbar-width: auto;
-  scrollbar-color: #54437a #030209;
+  scrollbar-color: #54437a #04030c;
 }
 
 /* Chrome, Edge, and Safari */
@@ -48,12 +56,12 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #030209;
+  background: var(--scrollbar-track-color);
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #54437a;
-  border-radius: 10px;
+  border-radius: 0px;
   border: 0px solid #ffffff;
 }
 
