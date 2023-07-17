@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
         <img
           src="/4x4.jpg"
           alt=""
-          className="h-[175px] w-[175px] rounded-full object-cover shadow-lg shadow-purple/50 md:h-[200px] md:w-[200px]"
+          className="h-[175px] w-[175px] rounded-full object-cover md:h-[200px] md:w-[200px]"
         />
       </div>
       <div>
