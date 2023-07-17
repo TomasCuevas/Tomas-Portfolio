@@ -1,7 +1,12 @@
 import { Variants } from "framer-motion";
 
-export const articleVariants: Variants = {
+export const articleVariantsLeft: Variants = {
   offscreen: { opacity: 0, x: -150 },
+  onscreen: { opacity: 1, x: 0, transition: { duration: 1 } },
+};
+
+export const articleVariantsRight: Variants = {
+  offscreen: { opacity: 0, x: 150 },
   onscreen: { opacity: 1, x: 0, transition: { duration: 1 } },
 };
 

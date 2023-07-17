@@ -6,7 +6,8 @@ import { TbLocation, TbBrandGithub } from "react-icons/tb";
 
 //* ANIMATION VARIANTS *//
 import {
-  articleVariants,
+  articleVariantsLeft,
+  articleVariantsRight,
   descriptionVariants,
   imageVariants,
   titleVariants,
@@ -29,7 +30,7 @@ export const ProjectCardExpanded: React.FC<Props> = ({
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.5 }}
-      variants={articleVariants}
+      variants={reverse ? articleVariantsRight : articleVariantsLeft}
       className="group relative flex min-h-[370px] w-full overflow-hidden rounded-md"
     >
       <div
