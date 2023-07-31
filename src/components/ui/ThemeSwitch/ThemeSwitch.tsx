@@ -5,11 +5,15 @@ import { useEffect, useState } from "react";
 import { BsSun, BsMoon } from "react-icons/bs";
 
 export const ThemeSwitch: React.FC = () => {
-  const { theme, setTheme, systemTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [currentTheme, setCurrentTheme] = useState<any>();
 
   useEffect(() => {
-    setCurrentTheme(() => (theme === "system" ? systemTheme : theme));
+    setTheme(theme === "dark" ? "dark" : "light");
+  }, []);
+
+  useEffect(() => {
+    setCurrentTheme(() => (theme === "dark" ? "dark" : "light"));
   }, [theme]);
 
   useEffect(() => {
