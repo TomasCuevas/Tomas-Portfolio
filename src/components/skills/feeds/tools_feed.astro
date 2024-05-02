@@ -1,13 +1,15 @@
 ---
 // COMPONENTS
 import SkillCard from "@/components/skills/skill_card.astro";
+
+// DATA
+import { TOOL_SKILLS_DATA } from "@/data/skills/skills.data";
 ---
 
 <div id="tools__feed" class="feed__inactive grid w-full grid-cols-3 gap-4">
-  <SkillCard img="/skills/docker.svg" name="Docker" />
-  <SkillCard img="/skills/git.svg" name="Git" />
-  <SkillCard img="/skills/github.svg" name="GitHub" />
-  <SkillCard img="/skills/npm.svg" name="NPM" />
-  <SkillCard img="/skills/vitejs.svg" name="Vite" />
-  <SkillCard img="/skills/vscode.svg" name="VS Code" />
+  {
+    TOOL_SKILLS_DATA.map((data, index) => (
+      <SkillCard img={data.img} name={data.name} link={data.link} right={index % 2 === 0} />
+    ))
+  }
 </div>
