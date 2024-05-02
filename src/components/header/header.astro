@@ -1,6 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 
+// NEXTUI
+import { Button } from "@nextui-org/react";
+
 // COMPONENTS
 import HeaderItem from "@/components/header/header_item.astro";
 import ThemeSwitch from "@/components/ui/theme_switch/theme_switch.astro";
@@ -12,13 +15,13 @@ import ThemeSwitch from "@/components/ui/theme_switch/theme_switch.astro";
   <div
     class="flex h-14 w-full max-w-[1000px] items-center rounded-full border border-light bg-slate-300 px-4 backdrop-blur-sm dark:bg-darkLight md:h-[66px] md:px-8"
   >
-    <div class="flex h-full w-[140px] items-center justify-start lg:w-[160px]">
-      <button data-to-navigate="hero" class="header__button h-full">
-        <img src="/t-logo.png" alt="logo" class="h-full w-[95px] opacity-80 transition-all duration-200 hover:opacity-100" />
-      </button>
+    <div class="flex h-full w-[100px] items-center justify-start lg:w-[195px]">
+      <Button client:load data-to-navigate="hero" className="header__button h-full rounded-none bg-transparent px-0">
+        <img src="/t-logo.png" alt="logo" class="aspect-[129/100] h-full brightness-125 transition-all duration-200" />
+      </Button>
     </div>
 
-    <ul class="mx-auto hidden h-full items-center gap-3 2md:flex lg:gap-7">
+    <ul class="mx-auto hidden h-full items-center gap-0 2md:flex">
       <HeaderItem buttonText="Inicio" navigateTo="hero" />
       <HeaderItem buttonText="Acerca de" navigateTo="about_me" />
       <HeaderItem buttonText="Proyectos" navigateTo="projects" />
@@ -26,24 +29,22 @@ import ThemeSwitch from "@/components/ui/theme_switch/theme_switch.astro";
     </ul>
 
     <div class="ml-auto hidden items-center gap-2 2md:flex">
-      <button
-        class="header__button flex items-center rounded-md border border-gray-500 text-gray-500 transition-colors duration-200 hover:bg-gray-200 hover:text-black dark:border-light/60 dark:text-light/60 dark:hover:bg-gray-900 dark:hover:text-white"
+      <Button
+        client:load
+        className="header__button flex items-center rounded-md border border-gray-500 bg-transparent px-2 text-gray-500 transition-colors duration-200 hover:bg-gray-200 hover:text-black dark:border-light/60 dark:text-light/60 dark:hover:bg-gray-900 dark:hover:text-white lg:px-4"
         data-to-navigate="contact"
       >
         <span class="px-3 py-1 text-[18px] font-light tracking-[1px] lg:text-xl">Contacto</span>
-      </button>
+      </Button>
     </div>
 
     <div class="ml-auto 2md:ml-2">
       <ThemeSwitch className="flex items-center justify-center" />
     </div>
 
-    <button type="button" class="ml-2 2md:hidden">
-      <Icon
-        name="line-md:close-to-menu-alt-transition"
-        class="relative z-50 h-10 w-10 text-purple transition-all duration-300"
-      />
-    </button>
+    <Button client:load type="button" className="ml-2 min-w-0 bg-transparent px-0 2md:hidden" id="open__sidebar-button">
+      <Icon name="mdi-light:menu" class="relative z-50 h-10 w-10 text-purple transition-all duration-300" />
+    </Button>
   </div>
 </header>
 
@@ -59,5 +60,18 @@ import ThemeSwitch from "@/components/ui/theme_switch/theme_switch.astro";
     });
   }
 
+  function openMenuSidebar() {
+    const $button = document.getElementById("open__sidebar-button") as HTMLButtonElement;
+    const $sidebar = document.getElementById("mobile__sidebar") as HTMLElement;
+    const $body = document.getElementById("body") as HTMLBodyElement;
+
+    $button.addEventListener("click", () => {
+      $sidebar.classList.add("mobile__sidebar-open");
+      $sidebar.classList.remove("mobile__sidebar-close");
+      $body.classList.add("remove__scroll");
+    });
+  }
+
   navigateToSection();
+  openMenuSidebar();
 </script>

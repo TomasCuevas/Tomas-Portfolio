@@ -1,0 +1,126 @@
+---
+import { Icon } from "astro-icon/components";
+
+// NEXTUI
+import { Button } from "@nextui-org/react";
+---
+
+<aside
+  id="mobile__sidebar"
+  class="mobile__sidebar-close fixed left-0 top-0 z-50 h-screen w-screen bg-slate-300 px-2 backdrop-blur-xl dark:bg-dark/80 xs:px-4 md:px-6 2md:hidden"
+>
+  <div class="mb-2 flex h-20 items-center justify-end gap-3 py-4">
+    <Button client:load id="close__sidebar-button" variant="light" className="px-0">
+      <Icon name="mdi:close" class="relative z-50 h-10 w-10 text-purple/80 transition-all hover:text-purple" />
+    </Button>
+  </div>
+
+  <section class="w-full">
+    <ul class="flex flex-col items-center gap-6">
+      <li class="h-14 w-full">
+        <Button
+          data-to-navigate="contact"
+          client:load
+          variant="shadow"
+          radius="sm"
+          color="secondary"
+          className="sidebar__button h-full w-full text-xl"
+        >
+          Contacto
+        </Button>
+      </li>
+      <li class="mt-2 h-12 w-full">
+        <Button
+          client:load
+          data-to-navigate="hero"
+          variant="bordered"
+          color="secondary"
+          radius="none"
+          className="sidebar__button h-full w-full border-x-0 border-t-0 text-start text-xl"
+        >
+          Inicio
+        </Button>
+      </li>
+      <li class="h-12 w-full">
+        <Button
+          client:load
+          data-to-navigate="about_me"
+          variant="bordered"
+          color="secondary"
+          radius="none"
+          className="sidebar__button h-full w-full border-x-0 border-t-0 text-start text-xl"
+        >
+          Acerca de
+        </Button>
+      </li>
+      <li class="h-12 w-full">
+        <Button
+          client:load
+          data-to-navigate="projects"
+          variant="bordered"
+          color="secondary"
+          radius="none"
+          className="sidebar__button h-full w-full border-x-0 border-t-0 text-start text-xl"
+        >
+          Proyectos
+        </Button>
+      </li>
+      <li class="h-12 w-full">
+        <Button
+          client:load
+          data-to-navigate="skills"
+          variant="bordered"
+          color="secondary"
+          radius="none"
+          className="sidebar__button h-full w-full border-x-0 border-t-0 text-start text-xl"
+        >
+          Habilidades
+        </Button>
+      </li>
+    </ul>
+  </section>
+</aside>
+
+<script>
+  const $body = document.getElementById("body") as HTMLBodyElement;
+  const $sidebar = document.getElementById("mobile__sidebar") as HTMLElement;
+
+  function closeMenuSidebar() {
+    const $button = document.getElementById("close__sidebar-button") as HTMLButtonElement;
+
+    $button.addEventListener("click", () => {
+      $sidebar.classList.remove("mobile__sidebar-open");
+      $sidebar.classList.add("mobile__sidebar-close");
+      $body.classList.remove("remove__scroll");
+    });
+  }
+
+  function navigateToSection() {
+    const $buttons = document.querySelectorAll(".sidebar__button");
+
+    $buttons.forEach(($button) => {
+      $button.addEventListener("click", () => {
+        const navigateTo = $button.getAttribute("data-to-navigate");
+        $body.classList.remove("remove__scroll");
+        $sidebar.classList.remove("mobile__sidebar-open");
+        $sidebar.classList.add("mobile__sidebar-close");
+
+        console.log(navigateTo);
+        document.getElementById(navigateTo || "")?.scrollIntoView();
+      });
+    });
+  }
+
+  closeMenuSidebar();
+  navigateToSection();
+</script>
+
+<style is:global>
+  .mobile__sidebar-open {
+    display: block;
+  }
+
+  .mobile__sidebar-close {
+    display: none;
+  }
+</style>

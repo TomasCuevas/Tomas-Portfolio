@@ -1,6 +1,7 @@
 ---
 // COMPONENTS
 import Header from "@/components/header/header.astro";
+import MobileSidebar from "@/components/ui/mobile_sidebar/mobile_sidebar.astro";
 
 // PROPS
 interface Props {
@@ -21,20 +22,22 @@ const { description, title } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body class="relative overflow-x-hidden bg-slate-200 dark:bg-dark">
+  <body id="body" class="relative overflow-x-hidden bg-slate-200 dark:bg-dark">
     <div class="fixed inset-0 z-0 h-full w-full bg-transparent">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_800px_at_100%_200px,#54437A66,transparent)]"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_800px_at_0%_600px,#54437A22,transparent)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_800px_at_100%_200px,#9353D366,transparent)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_800px_at_0%_600px,#9353D322,transparent)]"></div>
     </div>
 
     <svg class="absolute bottom-0 left-0 right-0 z-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
-        fill="#54437a77"
+        fill="#9353D377"
         d="M0,0L40,5.3C80,11,160,21,240,69.3C320,117,400,203,480,224C560,245,640,203,720,197.3C800,192,880,224,960,218.7C1040,213,1120,171,1200,160C1280,149,1360,171,1400,181.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
       ></path>
     </svg>
 
     <Header />
+    <MobileSidebar />
+
     <slot />
   </body>
 
@@ -70,10 +73,13 @@ const { description, title } = Astro.props;
 
     body {
       overflow-y: scroll;
+      scrollbar-gutter: stable;
     }
 
-    html {
-      scrollbar-gutter: stable;
+    .remove__scroll {
+      overflow: hidden;
+      overflow-y: hidden;
+      scrollbar-gutter: auto !important;
     }
 
     .dark {
