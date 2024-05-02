@@ -1,0 +1,35 @@
+---
+// ICONS
+import { Icon } from "astro-icon/components";
+
+// PROPS
+interface Props {
+  icon: any;
+  media: string;
+  text: string;
+  link?: string;
+}
+
+const { icon, media, text, link } = Astro.props;
+---
+
+<div class="group flex items-center gap-4">
+  <div class="flex rounded-md border border-purple/50 p-2 dark:border-purple/20">
+    <Icon name={icon} class="h-7 w-7 text-purple duration-200 group-hover:scale-125 md:h-8 md:w-8" />
+  </div>
+  <div class="flex flex-col">
+    <span class="font-sans text-sm text-gray-500 dark:text-light md:text-base">
+      {media}
+    </span>
+
+    {
+      link ? (
+        <a href={link} target="_blank" class="font-sans text-dark dark:text-white md:text-lg">
+          {text}
+        </a>
+      ) : (
+        <span class="font-sans text-dark dark:text-white md:text-lg">{text}</span>
+      )
+    }
+  </div>
+</div>

@@ -1,0 +1,68 @@
+---
+// ICONS
+import { Icon } from "astro-icon/components";
+
+// INTERFACES
+import { type IProject } from "@/interfaces";
+
+// PROPS
+interface Props {
+  project: IProject;
+  reverse?: boolean;
+}
+
+const { project, reverse = false } = Astro.props;
+---
+
+<article class="group relative my-10 flex min-h-[370px] w-full rounded-md">
+  <div
+    class={`absolute blur-2xl scale-110 -z-1 opacity-5 top-5 ${reverse ? "left-0" : "right-0"} flex h-auto w-[60%] group-hover:scale-[1.15] group-hover:opacity-90 group-hover:dark:opacity-40 duration-1000 max-w-[580px] overflow-visible rounded-md`}
+  >
+    <img
+      src={project.cover}
+      alt="Project cover"
+      class="h-auto w-full rounded-md object-cover shadow-2xl transition-all duration-300 group-hover:scale-105"
+    />
+  </div>
+
+  <div class={`absolute top-5 ${reverse ? "left-0" : "right-0"} flex h-auto w-[60%] max-w-[580px] overflow-visible rounded-md`}>
+    <img
+      src={project.cover}
+      alt="Project cover"
+      class="h-auto w-full rounded-md object-cover shadow-2xl transition-all duration-300 group-hover:scale-105"
+    />
+  </div>
+
+  <div class={`z-10 flex w-[50%] flex-col ${reverse ? "items-end ml-auto" : "items-start"} justify-center gap-4`}>
+    <h3 class="text-5xl font-light text-gray-800 dark:text-white">
+      {project.name}
+    </h3>
+
+    <div
+      class="rounded-md bg-white/90 text-dark shadow-2xl shadow-purple/20 backdrop-blur-sm transition-all duration-200 group-hover:shadow-purple/40"
+    >
+      <p class="flex flex-wrap gap-[3px] text-pretty px-8 py-4 text-lg font-light leading-8 text-darkLight">
+        {project.description}
+      </p>
+    </div>
+
+    <div class={`flex flex-wrap gap-3 gap-y-2 xl:max-w-[90%] ${reverse ? "justify-end" : "justify-start"}`}>
+      {
+        project.technologies.map((technologie) => (
+          <span class="rounded-md bg-gray-400/30 px-2 py-1 text-sm font-thin tracking-[1px] text-dark dark:bg-gray-800/30 dark:text-light">
+            {technologie}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="flex items-center justify-end gap-5">
+      <a href={project.link || ""} target="_blank" style={{ display: project.link ? "block" : "none" }}>
+        <Icon name="mdi:navigation-variant-outline" class="text-3xl text-dark duration-200 hover:scale-125 dark:text-white" />
+      </a>
+      <a href={project.repository} target="_blank">
+        <Icon name="mdi:github" class="text-3xl text-dark duration-200 hover:scale-125 dark:text-white" />
+      </a>
+    </div>
+  </div>
+</article>

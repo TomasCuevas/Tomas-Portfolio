@@ -26,16 +26,16 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.5 }}
       variants={articleVariants}
-      className="group relative flex w-full overflow-hidden rounded-2xl px-6 py-8 shadow-md shadow-purple/20 sm:p-16 md:px-6 md:py-8"
+      className="relative flex w-full px-6 py-8 overflow-hidden shadow-md group rounded-2xl shadow-purple/20 sm:p-16 md:px-6 md:py-8"
     >
-      <div className="absolute top-0 left-0 flex h-full w-full overflow-hidden rounded-2xl bg-gray-900">
+      <div className="absolute top-0 left-0 flex w-full h-full overflow-hidden bg-gray-900 rounded-2xl">
         <img
           src={project.cover}
           alt="Project cover"
-          className="h-full w-full rounded-md object-cover opacity-30 transition-all duration-300 group-hover:scale-110"
+          className="object-cover w-full h-full transition-all duration-300 rounded-md opacity-30 group-hover:scale-110"
         />
       </div>
-      <div className="z-10 ml-auto flex flex-col justify-center gap-4">
+      <div className="z-10 flex flex-col justify-center gap-4 ml-auto">
         <motion.h3
           initial="offscreen"
           whileInView="onscreen"

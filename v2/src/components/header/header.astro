@@ -1,0 +1,63 @@
+---
+import { Icon } from "astro-icon/components";
+
+// COMPONENTS
+import HeaderItem from "@/components/header/header_item.astro";
+import ThemeSwitch from "@/components/ui/theme_switch/theme_switch.astro";
+---
+
+<header
+  class="fixed left-0 top-0 z-20 flex h-[75px] w-full items-center justify-center bg-transparent px-2 xs:px-4 md:h-24 md:px-6 2xl:px-0"
+>
+  <div
+    class="flex h-14 w-full max-w-[1000px] items-center rounded-full border border-light bg-slate-300 px-4 backdrop-blur-sm dark:bg-darkLight md:h-[66px] md:px-8"
+  >
+    <div class="flex h-full w-[140px] items-center justify-start lg:w-[160px]">
+      <button data-to-navigate="hero" class="header__button h-full">
+        <img src="/t-logo.png" alt="logo" class="h-full w-[95px] opacity-80 transition-all duration-200 hover:opacity-100" />
+      </button>
+    </div>
+
+    <ul class="mx-auto hidden h-full items-center gap-3 2md:flex lg:gap-7">
+      <HeaderItem buttonText="Inicio" navigateTo="hero" />
+      <HeaderItem buttonText="Acerca de" navigateTo="about_me" />
+      <HeaderItem buttonText="Proyectos" navigateTo="projects" />
+      <HeaderItem buttonText="Habilidades" navigateTo="skills" />
+    </ul>
+
+    <div class="ml-auto hidden items-center gap-2 2md:flex">
+      <button
+        class="header__button flex items-center rounded-md border border-gray-500 text-gray-500 transition-colors duration-200 hover:bg-gray-200 hover:text-black dark:border-light/60 dark:text-light/60 dark:hover:bg-gray-900 dark:hover:text-white"
+        data-to-navigate="contact"
+      >
+        <span class="px-3 py-1 text-[18px] font-light tracking-[1px] lg:text-xl">Contacto</span>
+      </button>
+    </div>
+
+    <div class="ml-auto 2md:ml-2">
+      <ThemeSwitch className="flex items-center justify-center" />
+    </div>
+
+    <button type="button" class="ml-2 2md:hidden">
+      <Icon
+        name="line-md:close-to-menu-alt-transition"
+        class="relative z-50 h-10 w-10 text-purple transition-all duration-300"
+      />
+    </button>
+  </div>
+</header>
+
+<script>
+  function navigateToSection() {
+    const $buttons = document.querySelectorAll(".header__button");
+
+    $buttons.forEach(($button) => {
+      $button.addEventListener("click", (_event) => {
+        const navigateTo = $button.getAttribute("data-to-navigate");
+        document.getElementById(navigateTo || "")?.scrollIntoView();
+      });
+    });
+  }
+
+  navigateToSection();
+</script>

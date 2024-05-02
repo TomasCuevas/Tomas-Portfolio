@@ -1,0 +1,50 @@
+---
+// DATA
+import { SKILL_SECTIONS_DATA } from "@/data/skills/skill_sections.data";
+---
+
+<div id="choose_skill-buttons" class="flex w-full flex-wrap justify-center md:w-auto md:flex-col">
+  {
+    SKILL_SECTIONS_DATA.map((button) => (
+      <button
+        id={button.id}
+        data-feed={button.feedId}
+        class={`${button.active ? "border-dark bg-gray-300/60 text-dark dark:border-white dark:bg-darkLight dark:text-white" : "border-light/50 text-gray-500 dark:text-light/50"} md:rouned-r-md rounded-t-md border-b px-2 pb-[2px] text-base font-light transition-all hover:bg-gray-300/40 hover:text-dark dark:hover:bg-darkLight dark:hover:text-white md:rounded-t-none md:border-b-0 md:border-l-2 md:py-4 md:text-xl`}
+      >
+        {button.text}
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  const $buttons = document.querySelectorAll("#choose_skill-buttons button") as NodeListOf<HTMLButtonElement>;
+
+  function handleSectionChange(button: HTMLButtonElement) {
+    const active = ["text-dark", "border-dark", "bg-gray-300/60", "dark:border-white", "dark:text-white", "dark:bg-darkLight"];
+    const inactive = ["border-light/50", "text-gray-500", "dark:text-light/50"];
+
+    $buttons.forEach(($button) => {
+      const feedId = $button.dataset.feed as string;
+      const $feed__container = document.getElementById(feedId) as HTMLDivElement;
+
+      if ($button === button) {
+        $feed__container.classList.remove("feed__inactive");
+        $feed__container.classList.add("feed__active");
+
+        $button.classList.add(...active);
+        $button.classList.remove(...inactive);
+      } else {
+        $feed__container.classList.remove("feed__active");
+        $feed__container.classList.add("feed__inactive");
+
+        $button.classList.add(...inactive);
+        $button.classList.remove(...active);
+      }
+    });
+  }
+
+  $buttons.forEach(($button) => {
+    $button.addEventListener("click", () => handleSectionChange($button));
+  });
+</script>

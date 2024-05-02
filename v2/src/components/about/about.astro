@@ -1,0 +1,24 @@
+---
+//* COMPONENTS
+import AboutParagraph from "@/components/about/about_paragraph.astro";
+import Section from "@/components/ui/section/section.astro";
+import SectionTitle from "@/components/ui/section/section_title.astro";
+---
+
+<Section id="about_me">
+  <SectionTitle title="Acerca de mí" />
+  <div class="flex flex-col gap-4 xs:gap-5 md:gap-7">
+    <AboutParagraph
+      text="Desde muy temprana edad, me he sentido apasionado por el mundo del software. Mi primer acercamiento fue desarrollando pequeños scripts para darle funcionalidad a mis modelos 3D en un motor gráfico de videojuegos. Desde entonces, no he dejado de aprender y evolucionar como desarrollador."
+    />
+    <AboutParagraph
+      text="Siento una gran pasión por el desarrollo de proyectos ambiciosos, en los que pueda aplicar mis conocimientos y adquirir nuevos, ya que siempre estoy en busca de mejorar y superarme. Soy una persona que nunca se conforma con lo desarrollado y siempre busca dar lo mejor de sí."
+    />
+    <AboutParagraph
+      text="He desarrollado varios proyectos personales, algunos de los cuales he compartido con la comunidad. De cada uno de ellos he aprendido, mejorado y sacado valiosas conclusiones que me han permitido crecer tanto como profesional como persona."
+    />
+    <AboutParagraph
+      text="En mis proyectos personales, he enfrentado dificultades y momentos de frustración, pero estos obstáculos me han enseñado que nunca debo rendirme, entender que cada reto es una oportunidad de aprendizaje y crecimiento, y estoy dispuesto a enfrentarlos con entusiasmo y determinación."
+    />
+  </div>
+</Section>

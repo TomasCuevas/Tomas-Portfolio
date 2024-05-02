@@ -1,0 +1,52 @@
+---
+//* ICONS
+import { Icon } from "astro-icon/components";
+
+//* COMPONENTS
+import Section from "@/components/ui/section/section.astro";
+import SectionTitle from "@/components/ui/section/section_title.astro";
+---
+
+<Section id="hero">
+  <div class="mb-5 flex justify-center">
+    <img src="/4x4.jpg" alt="" class="h-[175px] w-[175px] rounded-full object-cover md:h-[200px] md:w-[200px]" />
+  </div>
+
+  <div>
+    <h3 class="text-2xl font-light tracking-[1px] text-purple md:text-3xl">Hola, mi nombre es</h3>
+  </div>
+
+  <SectionTitle title="Anselmo Tomás Cuevas" />
+
+  <div class="mb-4">
+    <h1 class="text-5xl tracking-[1px] text-purple sm:text-6xl">Navegando por el mundo del desarrollo web</h1>
+  </div>
+  <div>
+    <p class="max-w-[600px] text-balance text-lg font-light tracking-[1px] text-dark dark:text-white md:text-xl">
+      Como desarrollador fullstack, mi especialización se centra en el ecosistema de JavaScript. Me esfuerzo por mejorar
+      continuamente para crear experiencias excepcionales que satisfagan las necesidades del usuario más exigente.
+    </p>
+  </div>
+  <div class="my-4 flex items-center gap-4">
+    <a href="https://www.linkedin.com/in/tom%C3%A1s-cuevas-dev/" target="_blank">
+      <Icon
+        name="mdi:linkedin"
+        class="cursor-pointer text-4xl text-gray-700 transition-all duration-300 hover:text-gray-900 dark:text-white/70 dark:hover:text-white"
+      />
+    </a>
+    <a href="https://github.com/TomasCuevas" target="_blank">
+      <Icon
+        name="mdi:github"
+        class="cursor-pointer text-4xl text-gray-700 transition-all duration-300 hover:text-gray-900 dark:text-white/70 dark:hover:text-white"
+      />
+    </a>
+    <a
+      target="_blank"
+      href="/assets/Tomás_Cuevas_Curriculum_FullStack.pdf"
+      class="group flex items-center gap-2 rounded-md border border-gray-700 px-3 py-1 text-lg font-light tracking-[1px] text-gray-700 transition-all duration-300 hover:border-gray-900 hover:text-gray-900 dark:border-light/60 dark:text-light/60 dark:hover:border-light dark:hover:text-light"
+    >
+      <span>Ver Currículum</span>
+      <Icon name="mdi:eye-outline" class="text-2xl group-hover:scale-110" />
+    </a>
+  </div>
+</Section>

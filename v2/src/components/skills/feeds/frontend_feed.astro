@@ -1,0 +1,15 @@
+---
+// COMPONENTS
+import SkillCard from "@/components/skills/skill_card.astro";
+
+// DATA
+import { FRONTEND_SKILLS_DATA } from "@/data/skills/skills.data";
+---
+
+<div id="frontend__feed" class="feed_active grid w-full grid-cols-3 gap-4">
+  {
+    FRONTEND_SKILLS_DATA.map((data, index) => (
+      <SkillCard img={data.img} name={data.name} link={data.link} right={index % 2 === 0} />
+    ))
+  }
+</div>

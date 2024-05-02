@@ -1,0 +1,33 @@
+---
+// COMPONENTS
+import Section from "@/components/ui/section/section.astro";
+import SectionTitle from "@/components/ui/section/section_title.astro";
+import ChooseSkillSection from "@/components/skills/choose_skill_section.astro";
+import BackendFeed from "@/components/skills/feeds/backend_feed.astro";
+import FrontendFeed from "@/components/skills/feeds/frontend_feed.astro";
+import TestingFeed from "@/components/skills/feeds/testing__feed.astro";
+import ToolsFeed from "@/components/skills/feeds/tools_feed.astro";
+---
+
+<Section id="skills">
+  <SectionTitle title="Habilidades" />
+
+  <div class="flex flex-col items-start gap-6 md:mt-5 md:flex-row">
+    <ChooseSkillSection />
+
+    <FrontendFeed />
+    <BackendFeed />
+    <TestingFeed />
+    <ToolsFeed />
+  </div>
+</Section>
+
+<style is:global>
+  .feed__active {
+    display: grid;
+  }
+
+  .feed__inactive {
+    display: none;
+  }
+</style>
