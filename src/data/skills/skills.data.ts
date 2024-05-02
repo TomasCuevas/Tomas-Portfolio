@@ -1,4 +1,7 @@
-export const FRONTEND_SKILLS_DATA = [
+//* INTERFACES *//
+import type { ISkill } from "@/interfaces/skill.interfaces";
+
+export const FRONTEND_SKILLS_DATA: ISkill[] = [
   { name: "React", img: "/skills/react.svg", link: "https://react.dev" },
   { name: "CSS", img: "/skills/css.svg", link: "https://developer.mozilla.org/es/docs/Web/CSS" },
   { name: "HTML", img: "/skills/html5.svg", link: "https://developer.mozilla.org/es/docs/Web/HTML" },
@@ -14,7 +17,7 @@ export const FRONTEND_SKILLS_DATA = [
   { name: "Styled Components", img: "/skills/styledcomponents.svg", link: "https://styled-components.com" },
 ];
 
-export const BACKEND_SKILLS_DATA = [
+export const BACKEND_SKILLS_DATA: ISkill[] = [
   { name: "NodeJs", img: "/skills/nodejs.svg", link: "https://nodejs.org/en" },
   { name: "ExpressJs", img: "/skills/expressjs.svg", link: "https://expressjs.com/es/" },
   { name: "NestJs", img: "/skills/nestjs.svg", link: "https://nestjs.com" },
@@ -30,13 +33,13 @@ export const BACKEND_SKILLS_DATA = [
   { name: "Swagger", img: "/skills/swagger.svg", link: "https://swagger.io" },
 ];
 
-export const TESTING_SKILLS_DATA = [
+export const TESTING_SKILLS_DATA: ISkill[] = [
   { name: "Jest", img: "/skills/jest.svg", link: "https://jestjs.io" },
   { name: "Testing Library", img: "/skills/testinglibrary.svg", link: "https://testing-library.com" },
   { name: "Vitest", img: "/skills/vitest.svg", link: "https://vitest.dev" },
 ];
 
-export const TOOL_SKILLS_DATA = [
+export const TOOL_SKILLS_DATA: ISkill[] = [
   { name: "Docker", img: "/skills/docker.svg", link: "https://www.docker.com" },
   { name: "Git", img: "/skills/git.svg", link: "https://git-scm.com" },
   { name: "GitHub", img: "/skills/github.svg", link: "https://github.com" },
