@@ -13,7 +13,7 @@ export default {
       colors: {
         dark: "#04030C",
         darkLight: "#111017",
-        purple: "#54437A",
+        purple: "#9353D3",
         light: "#858FAD",
       },
       screens: {
