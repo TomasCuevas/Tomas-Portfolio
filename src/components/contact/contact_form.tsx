@@ -60,6 +60,7 @@ const ContactForm = () => {
         radius="none"
         value={form.user_name}
         onChange={({ target }) => setForm((prev) => ({ ...prev, user_name: target.value }))}
+        classNames={{ inputWrapper: "bg-white/20 dark:bg-black/40" }}
       />
       <Input
         color="secondary"
@@ -70,6 +71,7 @@ const ContactForm = () => {
         radius="none"
         value={form.user_email}
         onChange={({ target }) => setForm((prev) => ({ ...prev, user_email: target.value }))}
+        classNames={{ inputWrapper: "bg-white/20 dark:bg-black/40" }}
       />
       <Textarea
         color="secondary"
@@ -81,6 +83,7 @@ const ContactForm = () => {
         maxRows={15}
         value={form.user_message}
         onChange={({ target }) => setForm((prev) => ({ ...prev, user_message: target.value }))}
+        classNames={{ inputWrapper: "bg-white/20 dark:bg-black/40" }}
       />
 
       <Button
@@ -88,7 +91,7 @@ const ContactForm = () => {
         radius="none"
         variant="flat"
         color="secondary"
-        className="drop-shadow-lg disabled:cursor-not-allowed disabled:opacity-40"
+        className="drop-shadow-lg disabled:cursor-not-allowed disabled:opacity-60"
         type="submit"
         isLoading={isSubmiting}
       >
