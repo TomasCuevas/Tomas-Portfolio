@@ -1,4 +1,8 @@
 ---
+// NEXTUI
+import { Button } from "@nextui-org/react";
+
+// PROPS
 interface Props {
   buttonText: string;
   navigateTo?: string;
@@ -8,11 +12,11 @@ const { buttonText, navigateTo } = Astro.props;
 ---
 
 <li>
-  <button class="header__button" data-to-navigate={navigateTo}>
+  <Button client:load className="header__button rounded-md bg-transparent px-2 lg:px-3" data-to-navigate={navigateTo}>
     <span
-      class="text-[18px] font-light tracking-[1px] text-gray-500 hover:text-black dark:text-gray-500 dark:hover:text-gray-300 lg:text-xl"
+      class="text-base font-light tracking-[1px] text-gray-500 hover:text-black dark:text-gray-500 dark:hover:text-gray-300 lg:text-xl"
     >
       {buttonText}
     </span>
-  </button>
+  </Button>
 </li>
