@@ -51,13 +51,13 @@ export const PROJECTS_DATA = [
     link: "https://labor-client.vercel.app",
   },
   {
-    name: "Whiteblack",
-    cover: "/projects/whiteblack-cover.webp",
-    technologies: ["Next", "React", "Tailwind", "TypeScript"],
-    repository: "https://github.com/TomasCuevas/whiteblack",
+    name: "Productive Pulse",
+    cover: "/projects/productive-pulse-cover.webp",
+    technologies: ["Astro", "React", "Tailwind", "Zustand", "TypeScript", "NextUI"],
+    repository: "https://github.com/TomasCuevas/ProductivePulse",
     description:
-      "Blog personal desarrollado con Next.js y Tailwind. En el escribo artículos sobre desarrollo web y otros temas relacionados. Al desarrollarlo reforcé mis habilidades en Next.js, Tailwind, redacción y comunicación.",
-    link: "https://whiteblack.vercel.app",
+      "Aplicación Pomodoro desarrollada en Astro y React ofrece configuración flexible de tiempos de trabajo, descanso y descanso largo. Incluye un reproductor de música y un gestor de tareas integrado para crear, actualizar, completar y eliminar tareas.",
+    link: "https://productive-pulse.vercel.app",
   },
   {
     name: "Visualizer",
@@ -85,5 +85,14 @@ export const PROJECTS_DATA = [
     description:
       "Web de listado de pokemones con la API de PokeAPI. Funciones incluidas: listar todos los pokemones, filtrar por tipo, guardar/quitar de favoritos, ver detalles del pokemon seleccionado y buscar en el buscador integrado.",
     link: "https://pokedex-tc.vercel.app/",
+  },
+  {
+    name: "Whiteblack",
+    cover: "/projects/whiteblack-cover.webp",
+    technologies: ["Next", "React", "Tailwind", "TypeScript"],
+    repository: "https://github.com/TomasCuevas/whiteblack",
+    description:
+      "Blog personal desarrollado con Next.js y Tailwind. En el escribo artículos sobre desarrollo web y otros temas relacionados. Al desarrollarlo reforcé mis habilidades en Next.js, Tailwind, redacción y comunicación.",
+    link: "https://whiteblack.vercel.app",
   },
 ];
