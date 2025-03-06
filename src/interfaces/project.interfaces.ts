@@ -1,8 +1,10 @@
 export interface IProject {
+  active: boolean;
   cover: string;
   description: string;
   name: string;
-  repository: string;
   technologies: string[];
-  link: string;
+
+  link?: string;
+  repository?: string;
 }

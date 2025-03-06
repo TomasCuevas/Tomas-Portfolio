@@ -57,12 +57,23 @@ const { project, reverse = false } = Astro.props;
     </div>
 
     <div class="flex items-center justify-end gap-5">
-      <a href={project.link || ""} target="_blank" style={{ display: project.link ? "block" : "none" }}>
-        <Icon name="mdi:navigation-variant-outline" class="text-3xl text-dark duration-200 hover:scale-125 dark:text-white" />
-      </a>
-      <a href={project.repository} target="_blank">
-        <Icon name="mdi:github" class="text-3xl text-dark duration-200 hover:scale-125 dark:text-white" />
-      </a>
+      {
+        project.link && (
+          <a href={project.link} target="_blank">
+            <Icon
+              name="mdi:navigation-variant-outline"
+              class="text-3xl text-dark duration-200 hover:scale-125 dark:text-white"
+            />
+          </a>
+        )
+      }
+      {
+        project.repository && (
+          <a href={project.repository} target="_blank">
+            <Icon name="mdi:github" class="text-3xl text-dark duration-200 hover:scale-125 dark:text-white" />
+          </a>
+        )
+      }
     </div>
   </div>
 </article>

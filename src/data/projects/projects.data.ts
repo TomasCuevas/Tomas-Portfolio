@@ -1,5 +1,18 @@
-export const PROJECTS_DATA = [
+//* INTERFACES *//
+import type { IProject } from "@/interfaces";
+
+export const PROJECTS_DATA: IProject[] = [
   {
+    active: true,
+    name: "3Asaltos",
+    cover: "/projects/3-asaltos-cover.webp",
+    technologies: ["Astro", "React", "HeroUI", "Tailwind", "TypeScript"],
+    description:
+      "Web diseñada para visualizar todos los episodios de un podcast sobre MMA, desarrollada con Astro para optimizar la velocidad, mejorar el rendimiento y brindar una experiencia de usuario más fluida y agradable.",
+    link: "https://3asaltos.vercel.app/",
+  },
+  {
+    active: true,
     name: "Evlun",
     cover: "/projects/evlun-cover.webp",
     technologies: [
@@ -17,10 +30,11 @@ export const PROJECTS_DATA = [
     ],
     repository: "https://github.com/TomasCuevas/Evlun",
     description:
-      " Clon funcional de Twitter creado desde cero como un desafío avanzado. Incluye registro de cuenta, seguir usuarios, publicar tweets, responder a tweets propios y ajenos, dar 'me gusta' y más.",
+      "Clon funcional de Twitter creado desde cero como un desafío avanzado. Incluye registro de cuenta, seguir usuarios, publicar tweets, responder a tweets propios y ajenos, dar 'me gusta' y más.",
     link: "https://evlun.vercel.app",
   },
   {
+    active: true,
     name: "Teslo",
     cover: "/projects/teslo-cover.webp",
     technologies: [
@@ -42,6 +56,7 @@ export const PROJECTS_DATA = [
     link: "https://teslo-tc.vercel.app/",
   },
   {
+    active: false,
     name: "Labor",
     cover: "/projects/labor-cover.webp",
     technologies: ["Next", "React", "Tailwind", "PostgreSQL", "NestJs", "React-Query", "Docker", "TypeScript", "TypeORM"],
@@ -51,6 +66,7 @@ export const PROJECTS_DATA = [
     link: "https://labor-client.vercel.app",
   },
   {
+    active: true,
     name: "Productive Pulse",
     cover: "/projects/productive-pulse-cover.webp",
     technologies: ["Astro", "React", "Tailwind", "Zustand", "TypeScript", "NextUI"],
@@ -60,6 +76,7 @@ export const PROJECTS_DATA = [
     link: "https://productive-pulse.vercel.app",
   },
   {
+    active: true,
     name: "Visualizer",
     cover: "/projects/visualizer-cover.webp",
     technologies: ["React", "Next", "Tailwind", "Unsplash API", "React-Query", "TypeScript"],
@@ -69,6 +86,7 @@ export const PROJECTS_DATA = [
     link: "https://visualizer-azure.vercel.app/",
   },
   {
+    active: true,
     name: "Atomic Notes",
     cover: "/projects/atomic-notes-cover.webp",
     technologies: ["React", "Next", "Tailwind", "Material UI", "Firebase & Firestore", "Cloudinary", "TypeScript"],
@@ -78,6 +96,7 @@ export const PROJECTS_DATA = [
     link: "https://atomic-notes.vercel.app",
   },
   {
+    active: true,
     name: "Pokedex",
     cover: "/projects/pokedex-cover.webp",
     technologies: ["React", "Next", "Tailwind", "React-Query", "TypeScript", "Framer-Motion"],
@@ -87,6 +106,7 @@ export const PROJECTS_DATA = [
     link: "https://pokedex-tc.vercel.app/",
   },
   {
+    active: true,
     name: "Whiteblack",
     cover: "/projects/whiteblack-cover.webp",
     technologies: ["Next", "React", "Tailwind", "TypeScript"],
@@ -96,3 +116,5 @@ export const PROJECTS_DATA = [
     link: "https://whiteblack.vercel.app",
   },
 ];
+
+export const ACTIVE_PROJECTS_DATA = PROJECTS_DATA.filter((project) => project.active);
