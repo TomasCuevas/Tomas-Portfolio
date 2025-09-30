@@ -44,18 +44,6 @@ import { Button } from "@nextui-org/react";
       <li class="h-12 w-full">
         <Button
           client:load
-          data-to-navigate="about_me"
-          variant="bordered"
-          color="secondary"
-          radius="none"
-          className="sidebar__button h-full w-full border-x-0 border-t-0 text-start text-xl"
-        >
-          Acerca de
-        </Button>
-      </li>
-      <li class="h-12 w-full">
-        <Button
-          client:load
           data-to-navigate="projects"
           variant="bordered"
           color="secondary"
@@ -75,6 +63,18 @@ import { Button } from "@nextui-org/react";
           className="sidebar__button h-full w-full border-x-0 border-t-0 text-start text-xl"
         >
           Habilidades
+        </Button>
+      </li>
+      <li class="h-12 w-full">
+        <Button
+          client:load
+          data-to-navigate="about_me"
+          variant="bordered"
+          color="secondary"
+          radius="none"
+          className="sidebar__button h-full w-full border-x-0 border-t-0 text-start text-xl"
+        >
+          Acerca de
         </Button>
       </li>
     </ul>
